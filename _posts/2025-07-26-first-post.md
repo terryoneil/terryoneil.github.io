@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: first blog post test
 date: 2025-07-26
 categories: firstcategory
