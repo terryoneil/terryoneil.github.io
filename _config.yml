@@ -3,6 +3,7 @@ title: github pages site test
 description: site description test
 baseurl: ""
 url: "https://terryoneil.github.io"
+future: true
 
 # build settings
 markdown: kramdown
