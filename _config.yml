@@ -5,8 +5,6 @@ email: terryoneil39@gmail.com
 description: site description test
 baseurl: ""
 url: "https://terryoneil.github.io"
-future: true
-show_excerpts: true
 
 # build settings
 theme: minima
