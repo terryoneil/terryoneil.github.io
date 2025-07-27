@@ -6,4 +6,4 @@ url: "https://terryoneil.github.io"
 
 # build settings
 markdown: kramdown
-theme: jekyll-theme-minima
+theme: minima
