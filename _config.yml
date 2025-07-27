@@ -4,6 +4,7 @@ description: site description test
 baseurl: ""
 url: "https://terryoneil.github.io"
 future: true
+show_excerpts: true
 
 # build settings
 markdown: kramdown
