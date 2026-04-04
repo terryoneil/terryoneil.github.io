@@ -1,0 +1,3 @@
+I'm a professional editor with two years of experience in technical publishing. This portfolio shows my ability to produce structured documentation using a docs-as-code workflow and Diátaxis framework. 
+
+The guides here reflect both the tools and the thinking behind them. You can reach me at [terryoneil39@gmail.com](mailto:terryoneil39@gmail.com) or [LinkedIn](https://www.linkedin.com/in/terry-o-a0634b243/).

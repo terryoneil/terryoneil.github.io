@@ -1,0 +1,18 @@
+site_name: Terry O'Neil
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Markdown for Word Users: markdown-guide.md
+  - GitHub for Non-Devs: github-guide.md
+  - Car Guide: carAV-guide.md
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/terry-o-a0634b243/
+    - icon: fontawesome/regular/envelope
+      link: mailto:terryoneil39@gmail.com

@@ -1,9 +1,0 @@
-# settings
-title: terry o'neil
-email: terryoneil39@gmail.com
-description: site description test
-baseurl: ""
-url: "https://terryoneil.github.io"
-
-# build settings
-theme: minima
