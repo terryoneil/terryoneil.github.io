@@ -154,7 +154,7 @@ When you intend on doing something substantial or experimental (like restructuri
 To create a branch, go to ``Branch -> New Branch``.
 To merge, go to ``Branch -> Merge into Current Branch``. 
 
-
+<a id="glossary"></a>
 ## Glossary
 
 **Branch**
