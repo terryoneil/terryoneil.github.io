@@ -4,7 +4,9 @@
 ## A Beginner's Guide to GitHub Desktop and Markdown
 
 Git is an extremely useful version control tool. It may look intimidating to non-developers, but it's actually pretty simple. It's an essential piece of any collaborative writing workflow.
+
 Oftentimes people work with Git purely through command line terminals. While this is  efficient and practical for coders, it's not necessary for writers. It's easier to work in something that has a GUI, like Github Desktop.
+
 By the end of this guide, you'll have a GitHub account, a local repo, and a sample Markdown file tracked with version control.
 
 ## What Does Git Actually Do?
