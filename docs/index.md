@@ -2,5 +2,6 @@ I'm a professional editor with two years of experience working on technical cont
 
 You can reach me at [terryoneil39@gmail.com](mailto:terryoneil39@gmail.com) or [LinkedIn](https://www.linkedin.com/in/terry-o-a0634b243/).
 
-##Documentation Samples
-Git for Writers: A Beginner's Guide to GitHub Desktop and Markdown
+## Writing Samples
+
+[Git for Writers: A Beginner's Guide to GitHub Desktop and Markdown](https://terryoneil.github.io/git-guide/)

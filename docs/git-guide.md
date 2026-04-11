@@ -1,6 +1,8 @@
 
 # Git for Writers
+
 ## A Beginner's Guide to GitHub Desktop and Markdown
+
 By the end of this guide, you'll have a GitHub account, a local repo, and a sample Markdown file tracked with version control.
 
 Git is an extremely useful version control tool. It may look intimidating to non-developers, but it's actually pretty simple. It's an essential piece of any collaborative writing workflow.
