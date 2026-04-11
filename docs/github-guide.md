@@ -6,9 +6,11 @@ Oftentimes people work with Git purely through command line terminals. While thi
 
 ## What Does Git Actually Do?
 
-Git is a version control tool. It keeps track of every different version that you save of a file. With Git, you can easily track changes and collaborate with other people through forking, merging, .. 
+Git is a version control tool. It keeps track of every different version that you save of a file. With Git, you can easily track changes and collaborate with other people through forking, merging, branching, and pulling.
 
-## MARKDOWN EXPLANATION
+## What is Markdown?
+
+Markdown is a plain text formatting syntax. It converts plain text to HTML code. It was developed to be simpler and more readable than HTML.
 
 ## Installing GitHub and a Text Editor
 
@@ -34,17 +36,16 @@ Open GitHub Desktop and sign in with your GitHub account. The program walks you 
 
 ## Making Your Markdown File
 
-Go into GitHub Desktop, right-click on your repo, and select Open in Visual Studio Code. PROVIDE AN ALTERNATIVE METHOD?<br>
+Go into GitHub Desktop, right-click on your repo, and select Open in Visual Studio Code. 
+<br>
+
+You can also open your repo through VS Code by going to File -> Open Folder and selecting the location of your GitHub repo on your device. 
+
 Once you're in VS Code, open the Explorer tab and click the New File -IMAGE- button. Create a file called *test.md*.<br>
 Try copying and pasting the following sample markdown template.
 
-!!! tip
-
-    In VS Code, you can easily preview your changes in real-time. Simply press `ctrl/cmd + shift + v` to open a markdown preview tab.
-
-
-
-### Level 1 Heading
+```
+# Level 1 Heading
 
 Here is some sample text. **This sentence is bolded.** *The following sentence—in other words, this one—is italicized.* ***This one combines both emphasis techniques.*** 
 
@@ -69,10 +70,37 @@ This is a hyperlink to [Google](https://google.com "And this is the link's toolt
 
 #### Image Insertion 
 
-![This is alt text for an image.]()
+![This is alt text for an image.](https://terryoneil.github.io/images/cat.jpg)
 
-This is the author's cat.
+This is a photo of the author's cat.
 ```
+
+## Making A Local Commit
+
+Save your markdown file and open Github Desktop. Click the checkmark on *test.md* to *stage* it. Write a summary to describe your changes, then press *Commit 1 file to main.* You've just done a *local commit*.
+
+Making a local commit is like saving your progress in a video game; it's a great way to track changes. Use the summary and description boxes to provide additional context. This will make it easy to know which commit to revert to if necessary.
+
+
+!!! tip
+
+    In VS Code, you can easily preview your changes in real-time. Simply press `ctrl/cmd + shift + v` to open a markdown preview tab.
+
+## Tracking Changes 
+
+Now it's time to understand how to use Git as version control. In VS Code, within *test.md*, delete the first level 1 heading. Replace it with a level 4 heading.
+
+```
+#### This is A Level 4 Heading
+```
+Save your file and look in GitHub desktop. Notice how Git simply tracks edits by highlighting them in red and green. It tracks line-level deletions and insertions, which is traditionally very useful for tracking changes to code, but is also highly applicable for technical writing and documentation. 
+
+## Pushing Changes
+
+Finally, it's time to *push to main*. Stage *test.md* and commit it to main. Press Push Origin. 
+
+!!! note
+    *Origin* is Git's way of referring to the location a repo originally came from. When you Push Origin, you're pushing your branched copy of the repo onto the original repo. 
 
 ## Glossary
 
@@ -93,3 +121,9 @@ This is the author's cat.
 
 **Syntax**
 – The set of formal rules that defines the structure and format of a coding or markup language. You can think of syntаx as the "grammar" of coding languages.
+
+**Stage**
+— To select a changed file to include in your next commit. Staging allows you select only the files you want to commit, instead of committing everything at once.
+
+**Local Commit**
+— A commit that isn't pushed to the main branch. It lives only on your local machine.
