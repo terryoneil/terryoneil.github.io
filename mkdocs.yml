@@ -5,16 +5,16 @@ theme:
     - content.tooltips
 nav:
   - Home: index.md
-  - Markdown for Word Users: markdown-guide.md
-  - GitHub for Non-Devs: github-guide.md
-  - Car Guide: carAV-guide.md
+  - GitHub for Writers: github-guide.md
 markdown_extensions:
   - admonition
   - abbr
   - attr_list
+  - md_in_html
   - pymdownx.snippets:
       auto_append:
         - includes/abbreviations.md
+  - pymdownx.blocks.caption
   - pymdownx.details
   - pymdownx.superfences
 extra:
