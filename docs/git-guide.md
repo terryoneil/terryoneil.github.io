@@ -15,7 +15,7 @@ Git is a version control tool. It keeps track of every different version that yo
 
 !!! note
 
-    See the [Glossary](#Glossary) for definitions of all these Git-specific terms. 
+    See the [Glossary](#glossary) for definitions of all these Git-specific terms. 
 
 ## What is Markdown?
 
