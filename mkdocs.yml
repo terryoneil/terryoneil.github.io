@@ -1,6 +1,8 @@
 site_name: Terry O'Neil
 theme:
   name: material
+  features:
+    - content.tooltips
 nav:
   - Home: index.md
   - Markdown for Word Users: markdown-guide.md
@@ -8,6 +10,11 @@ nav:
   - Car Guide: carAV-guide.md
 markdown_extensions:
   - admonition
+  - abbr
+  - attr_list
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.details
   - pymdownx.superfences
 extra:
@@ -16,3 +23,5 @@ extra:
       link: https://www.linkedin.com/in/terry-o-a0634b243/
     - icon: fontawesome/regular/envelope
       link: mailto:terryoneil39@gmail.com
+watch:
+  - includes
