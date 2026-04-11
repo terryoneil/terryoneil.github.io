@@ -5,7 +5,7 @@ theme:
     - content.tooltips
 nav:
   - Home: index.md
-  - GitHub for Writers: github-guide.md
+  - Git for Writers: github-guide.md
 markdown_extensions:
   - admonition
   - abbr

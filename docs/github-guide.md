@@ -19,7 +19,7 @@ Git is a version control tool. It keeps track of every different version that yo
 
 Markdown is a plain text formatting syntax that can easily be converted to HTML. It was developed to be more readable and easier to write in than HTML.
 
-## Installing GitHub and a Text Editor
+## Installing GitHub Desktop and a Text Editor
 
 ### GitHub
 
@@ -67,13 +67,13 @@ Try copying and pasting the following sample markdown template:
 
     ### Level 3 Heading
 
-    1. Markdown automatically handles numbered lists.
+    1. Markdown automatically handles ordered (numbered) lists.
     1. You don't actually need to keep track.
     1. Notice how this list, in the code, consists only of the number 1
     1. And yet, when all is said and done, it renders as a proper numbered list.
 
     - By contrast,
-    - This is an ordered list.
+    - This is an unordered (bulleted) list.
 
     This is a hyperlink to [Google](https://google.com "And this is the link's tooltip.").
     <This is a direct link.>
