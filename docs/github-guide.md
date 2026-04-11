@@ -36,12 +36,43 @@ Open GitHub Desktop and sign in with your GitHub account. The program walks you 
 
 Go into GitHub Desktop, right-click on your repo, and select Open in Visual Studio Code. PROVIDE AN ALTERNATIVE METHOD?<br>
 Once you're in VS Code, open the Explorer tab and click the New File -IMAGE- button. Create a file called *test.md*.<br>
-Now try writing something in markdown. Make sure you're using the proper syntax! 
+Try copying and pasting the following sample markdown template.
 
 !!! tip
 
     In VS Code, you can easily preview your changes in real-time. Simply press `ctrl/cmd + shift + v` to open a markdown preview tab.
 
+
+
+### Level 1 Heading
+
+Here is some sample text. **This sentence is bolded.** *The following sentence—in other words, this one—is italicized.* ***This one combines both emphasis techniques.*** 
+
+## Level 2 Heading 
+
+> Here is a blockquote!
+>
+>> And another, nested!
+
+### Level 3 Heading
+
+1. Markdown automatically handles numbered lists.
+1. You don't actually need to keep track.
+1. Notice how this list, in the code, consists only of the number 1
+1. And yet, when all is said and done, it renders as a proper numbered list.
+
+- By contrast,
+- This is an ordered list.
+
+This is a hyperlink to [Google](https://google.com "And this is the link's tooltip.").
+<This is a direct link.>
+
+#### Image Insertion 
+
+![This is alt text for an image.]()
+
+This is the author's cat.
+```
 
 ## Glossary
 
