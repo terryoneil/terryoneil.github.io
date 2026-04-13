@@ -9,3 +9,9 @@
 *[pulling]: Downloading the latest changes from the GitHub repo to your local device. If a teammate has pushed changes since your last sync, pulling will bring those changes to your local copy.
 *[branching]: Creating a separate copy of a project to work on without affecting the main version. A branch is like a draft. 
 *[merging]: Combining changes from one branch into another, to eventually be merged into the main version.
+*[blocklist]: A list of known ad, tracking, or malicious domains.
+*[DHCP]: Dynamic Host Configuration Protocol
+*[DNS]: Domain Name System
+*[ISO]: A file format for disk images, maintained by the International Organization for Standardization.
+*[ISP]: Internet Server Provider
+*[SSH]: Secure Shell. A protocol for securely and remotely controlling a computer.
