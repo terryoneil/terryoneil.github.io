@@ -414,10 +414,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#walking-through-the-installer" class="md-nav__link">
+  <a href="#running-the-installer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Walking Through the Installer
+        Running the Installer
       
     </span>
   </a>
@@ -509,7 +509,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#running-the-installer" class="md-nav__link">
+  <a href="#running-the-installer_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Running the Installer
@@ -649,17 +649,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Securing SSH
-      
-    </span>
-  </a>
   
 </li>
       
@@ -865,10 +854,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#walking-through-the-installer" class="md-nav__link">
+  <a href="#running-the-installer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Walking Through the Installer
+        Running the Installer
       
     </span>
   </a>
@@ -960,7 +949,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#running-the-installer" class="md-nav__link">
+  <a href="#running-the-installer_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Running the Installer
@@ -1104,17 +1093,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#securing-ssh" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Securing SSH
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#securing-ssh-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1195,7 +1173,7 @@
 <h1 id="network-level-ad-blocking">Network-Level Ad Blocking</h1>
 <h2 id="a-beginners-guide-to-ad-blocking-on-home-wi-fi">A Beginner's Guide to Ad Blocking on Home Wi-fi</h2>
 <p>Most ad blockers only work in a single browser on a single device. By contrast, <abbr title="Domain Name System">DNS</abbr>-level ad-blocking works at the network level. This means that every device on your network gets ad-blocking automatically, no browser extensions required.</p>
-<p>This guide is meant to walk you through setting up a home Linux server using Ubuntu Server and using it to run Technitium <abbr title="Domain Name System">DNS</abbr> Server, a free, open-source, and easy-to-use <abbr title="Domain Name System">DNS</abbr> manager with built-in ad blocking.</p>
+<p>This guide is meant to walk you through setting up a Ubuntu Linux server and installing Technitium. <a href="https://technitium.com/dns/">Technitium</a> is a free, open-source, and easy-to-use <abbr title="Domain Name System">DNS</abbr> manager with built-in ad blocking functionality.</p>
 <p>By the end, you'll have a self-hosted <abbr title="Domain Name System">DNS</abbr> server that blocks ads and trackers across your entire home network.</p>
 <h2 id="how-it-works">How It Works</h2>
 <h3 id="what-is-dns">What Is <abbr title="Domain Name System">DNS</abbr>?</h3>
@@ -1228,9 +1206,9 @@
 <hr />
 <h2 id="installing-ubuntu-server">Installing Ubuntu Server</h2>
 <h3 id="downloading-the-installer">Downloading the Installer</h3>
-<p>On your main computer, go to <a href="https://ubuntu.com/download/server">ubuntu.com/download/server</a> and download the Ubuntu Server 24.04 LTS .iso file. It's about 3.2 GB.</p>
+<p>On your main computer, go to <a href="https://ubuntu.com/download/server">ubuntu.com/download/server</a> and download the Ubuntu Server 24.04 LTS <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file. It's about 3.2 GB.</p>
 <h3 id="creating-a-bootable-usb-drive">Creating a Bootable USB Drive</h3>
-<p>To install Ubuntu Server, you need to transfer the .iso file onto a bootable USB drive. You can use <a href="https://etcher.balena.io/">Balena Etcher</a> for this.</p>
+<p>To install Ubuntu Server, you need to transfer the <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file onto a bootable USB drive. You can use <a href="https://etcher.balena.io/">Balena Etcher</a> for this.</p>
 <ol>
 <li>Open Balena Etcher.</li>
 <li>Click <strong>Flash from file</strong> and select your downloaded <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr>.</li>
@@ -1248,31 +1226,47 @@
 <p>In the boot menu, select your USB drive. The Ubuntu Server installer will load.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you're not sure which key to press, try repeatedly pressing <code>F12, F2, F10, or DEL</code>.</p>
+<p>If you're not sure which key to press, try repeatedly pressing <code>F12, F2, F10,</code> or <code>DEL</code>.</p>
 </div>
-<h3 id="walking-through-the-installer">Walking Through the Installer</h3>
+<h3 id="running-the-installer">Running the Installer</h3>
 <p>The Ubuntu Server installer will take you through a series of steps.</p>
+<ol>
+<li>
 <p><strong>Language and keyboard:</strong> Select your language and keyboard layout.</p>
+</li>
+<li>
 <p><strong>Network:</strong> Ubuntu will attempt to detect your network automatically. Leave this as-is for now.</p>
+</li>
+<li>
 <p><strong>Storage:</strong> When the installer asks about storage, choose <strong>Use an entire disk</strong> and confirm. This will erase the drive and install Ubuntu on it.</p>
+</li>
+</ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Selecting <strong>Use an entire disk</strong> will permanently delete everything currently on that drive. <strong>Make sure you're installing to the right drive.</strong></p>
 </div>
+<ol>
+<li>
 <p><strong>Profile setup:</strong> You'll be asked to create a username and password. Choose something secure, yet reasonably typable, as you'll be typing this regularly.</p>
+</li>
+<li>
 <p><strong><abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>:</strong> When asked, select <strong>Install OpenSSH server</strong>. This lets you connect to your server remotely from another computer instead of needing a keyboard and monitor plugged directly into the server. It's incredibly useful. </p>
+</li>
+<li>
 <p><strong>Snaps:</strong> Skip these optional snap packages. You don't need any of them.</p>
+</li>
+</ol>
 <p>Confirm the installation and wait. When it finishes, remove the USB drive and let the server reboot.</p>
 <hr />
 <h2 id="interacting-with-your-server">Interacting with Your Server</h2>
 <p>Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Ubuntu Server doesn't have a real <abbr title="Graphical User Interface">GUI</abbr>; everything is done through the command line.</p>
 <p>You can log in directly by typing your username and pressing Enter, then entering your password.</p>
-<p>Technically, you can type commands directly into your server. However, it is much more convenient to connect <em>remotely</em> using <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> (<em>Secure Shell</em>), which lets you control your server from a different computer's terminal program. </p>
+<p>Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>, which lets you control your server from a different computer's terminal program. </p>
 <h3 id="connecting-via-ssh">Connecting via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></h3>
 <p>On <strong>Windows 11</strong>, open PowerShell or Terminal. On <strong>Mac or Linux</strong>, open Terminal. Then type:</p>
-<div class="highlight"><pre><span></span><code>ssh your-username@your-server-ip
+<div class="highlight"><pre><span></span><code>ssh your-username@192.168.#.###
 </code></pre></div>
-<p>Replace <code>your-username</code> with the username you created during installation, and <code>your-server-ip</code> with the IP address shown on your server's login screen.</p>
+<p>Replace <code>your-username</code> with the username you created during installation, and <code>192.168.#.###</code> with the IP address shown on your server's login screen.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Your server's current IP address is printed on screen when it boots, next to the words <code>eth0</code> or <code>enp</code>. It should look something like <code>192.168.#.###</code>.</p>
@@ -1283,7 +1277,7 @@
 <p>By default, your server accepts <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> connections using your username and password. However, if your network is ever exposed to the open internet, this creates a security risk. <strong>Strongly consider disabling password authentication and switching to an <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> key-based login after you're done with this guide.</strong> See the <a href="#ssh">Securing <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></a> section.</p>
 </div>
 <hr />
-<h2 id="giving-your-server-a-static-ip-address">Giving Your Server a Static IP Address</h2>
+<h2 id="giving-your-server-a-static-ip-address">Giving Your Server a <abbr title="An IP address that doesn't change. Required for a server so that other devices can reliably find it.">Static IP</abbr> Address</h2>
 <p>By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a <abbr title="Domain Name System">DNS</abbr> server, this is a clear problem: if its IP address changes, nothing will be able to find it.</p>
 <p>Therefore, you need to give your server a <em>static IP</em> that does not change; it remains static.</p>
 <h3 id="finding-your-current-network-info">Finding Your Current Network Info</h3>
@@ -1336,7 +1330,7 @@
 <hr />
 <h2 id="installing-technitium-dns-server">Installing Technitium <abbr title="Domain Name System">DNS</abbr> Server</h2>
 <p>Now that your server is stable and accessible, it's time to install Technitium, which will handle your <abbr title="Domain Name System">DNS</abbr> and ad blocking.</p>
-<h3 id="running-the-installer">Running the Installer</h3>
+<h3 id="running-the-installer_1">Running the Installer</h3>
 <p>Technitium provides an install script. Run this command to download and execute it:</p>
 <p><div class="highlight"><pre><span></span><code>curl -sSL https://download.technitium.com/dns/install.sh | sudo bash
 </code></pre></div>
@@ -1424,7 +1418,6 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 <p><code>systemctl</code> is Ubuntu's service manager. It's how you start, stop, restart, and check the status of background services like Technitium.</p>
 </div>
 <p><a id="ssh"></a></p>
-<h2 id="securing-ssh">Securing <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></h2>
 <h2 id="securing-ssh-recommended">Securing <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> (Recommended)</h2>
 <p>By default, your server accepts <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> logins using a password. Switching to <em>key-based authentication</em> is more secure and worth doing before anything else.</p>
 <h3 id="step-1-generate-a-key-pair">Step 1: Generate a Key Pair</h3>
@@ -1435,7 +1428,7 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 <p class="admonition-title">Note</p>
 <p>Ed25519 is a recommended crytographic algorithm for <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> keys. </p>
 </div>
-<p>Press Enter through the prompts to accept the defaults. This creates two files: a private key (which stays on your machine) and a public key (which goes on the server).</p>
+<p>Press <code>Enter</code> through the prompts to accept the defaults. This creates two files: a private key (for your machine) and a public key (for your server).</p>
 <h3 id="step-2-copy-your-public-key-to-the-server">Step 2: Copy Your Public Key to the Server</h3>
 <p>​<code>ssh-copy-id your-username@192.168.#.###
 ​</code></p>
@@ -1476,7 +1469,7 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 — Ubuntu's network configuration tool. It reads a YAML file and applies network settings, including static IP addresses.</p>
 <p><strong><abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></strong>
 — Secure Shell. A protocol for connecting to and controlling a remote computer securely over a network.</p>
-<p><strong>Static IP</strong>
+<p><strong><abbr title="An IP address that doesn't change. Required for a server so that other devices can reliably find it.">Static IP</abbr></strong>
 — An IP address that doesn't change. Required for a server so that other devices can reliably find it.</p>
 <p><strong>sudo</strong>
 — A command prefix that runs a command with administrator privileges. Short for "superuser do."</p>

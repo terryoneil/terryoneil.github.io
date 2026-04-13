@@ -4,7 +4,7 @@
 
 Most ad blockers only work in a single browser on a single device. By contrast, DNS-level ad-blocking works at the network level. This means that every device on your network gets ad-blocking automatically, no browser extensions required.
 
-This guide is meant to walk you through setting up a home Linux server using Ubuntu Server and using it to run Technitium DNS Server, a free, open-source, and easy-to-use DNS manager with built-in ad blocking.
+This guide is meant to walk you through setting up a Ubuntu Linux server and installing Technitium. [Technitium](https://technitium.com/dns/) is a free, open-source, and easy-to-use DNS manager with built-in ad blocking functionality.
 
 By the end, you'll have a self-hosted DNS server that blocks ads and trackers across your entire home network.
 
@@ -51,11 +51,11 @@ No special hardware is required for this. You can use any old laptop or desktop 
 
 ### Downloading the Installer
 
-On your main computer, go to [ubuntu.com/download/server](https://ubuntu.com/download/server) and download the Ubuntu Server 24.04 LTS .iso file. It's about 3.2 GB.
+On your main computer, go to [ubuntu.com/download/server](https://ubuntu.com/download/server) and download the Ubuntu Server 24.04 LTS ISO file. It's about 3.2 GB.
 
 ### Creating a Bootable USB Drive
 
-To install Ubuntu Server, you need to transfer the .iso file onto a bootable USB drive. You can use [Balena Etcher](https://etcher.balena.io/) for this.
+To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB drive. You can use [Balena Etcher](https://etcher.balena.io/) for this.
 
 1. Open Balena Etcher.
 2. Click **Flash from file** and select your downloaded ISO.
@@ -78,27 +78,27 @@ In the boot menu, select your USB drive. The Ubuntu Server installer will load.
 
 !!! note
 
-    If you're not sure which key to press, try repeatedly pressing ``F12, F2, F10, or DEL``.
+    If you're not sure which key to press, try repeatedly pressing ``F12, F2, F10,`` or ``DEL``.
 
-### Walking Through the Installer
+### Running the Installer
 
 The Ubuntu Server installer will take you through a series of steps.
 
-**Language and keyboard:** Select your language and keyboard layout.
+1. **Language and keyboard:** Select your language and keyboard layout.
 
-**Network:** Ubuntu will attempt to detect your network automatically. Leave this as-is for now.
+2. **Network:** Ubuntu will attempt to detect your network automatically. Leave this as-is for now.
 
-**Storage:** When the installer asks about storage, choose **Use an entire disk** and confirm. This will erase the drive and install Ubuntu on it.
+3. **Storage:** When the installer asks about storage, choose **Use an entire disk** and confirm. This will erase the drive and install Ubuntu on it.
 
 !!! warning
 
     Selecting **Use an entire disk** will permanently delete everything currently on that drive. **Make sure you're installing to the right drive.**
 
-**Profile setup:** You'll be asked to create a username and password. Choose something secure, yet reasonably typable, as you'll be typing this regularly.
+4. **Profile setup:** You'll be asked to create a username and password. Choose something secure, yet reasonably typable, as you'll be typing this regularly.
 
-**SSH:** When asked, select **Install OpenSSH server**. This lets you connect to your server remotely from another computer instead of needing a keyboard and monitor plugged directly into the server. It's incredibly useful. 
+5. **SSH:** When asked, select **Install OpenSSH server**. This lets you connect to your server remotely from another computer instead of needing a keyboard and monitor plugged directly into the server. It's incredibly useful. 
 
-**Snaps:** Skip these optional snap packages. You don't need any of them.
+6. **Snaps:** Skip these optional snap packages. You don't need any of them.
 
 Confirm the installation and wait. When it finishes, remove the USB drive and let the server reboot.
 
@@ -110,17 +110,17 @@ Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. U
 
 You can log in directly by typing your username and pressing Enter, then entering your password.
 
-Technically, you can type commands directly into your server. However, it is much more convenient to connect *remotely* using SSH (*Secure Shell*), which lets you control your server from a different computer's terminal program. 
+Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using SSH, which lets you control your server from a different computer's terminal program. 
 
 ### Connecting via SSH
 
 On **Windows 11**, open PowerShell or Terminal. On **Mac or Linux**, open Terminal. Then type:
 
 ```
-ssh your-username@your-server-ip
+ssh your-username@192.168.#.###
 ```
 
-Replace `your-username` with the username you created during installation, and `your-server-ip` with the IP address shown on your server's login screen.
+Replace `your-username` with the username you created during installation, and `192.168.#.###` with the IP address shown on your server's login screen.
 
 !!! note
 
@@ -351,7 +351,6 @@ sudo systemctl status dns.service
 
 
 <a id="ssh"></a>
-## Securing SSH
 
 ## Securing SSH (Recommended)
 
@@ -367,7 +366,7 @@ ssh-keygen -t ed25519
 !!! note
     Ed25519 is a recommended crytographic algorithm for SSH keys. 
 
-Press Enter through the prompts to accept the defaults. This creates two files: a private key (which stays on your machine) and a public key (which goes on the server).
+Press ``Enter`` through the prompts to accept the defaults. This creates two files: a private key (for your machine) and a public key (for your server).
 
 ### Step 2: Copy Your Public Key to the Server
 
