@@ -150,7 +150,7 @@ ip a
 
 Look for a section starting with `eth0` or `enpXsX`. You'll see your current IP address listed next to `inet`. Write it down; you will need to reuse it a lot. 
 
-<img src="../images/ipa_a.png" alt="ip a command." width="400">
+<img src="../images/ipa.png" alt="ip a command." width="400">
 
 Press ``ctrl + c`` to exit this view. Then type:
 
