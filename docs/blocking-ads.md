@@ -364,7 +364,7 @@ On your **main computer** (not the server), run:
 ssh-keygen -t ed25519
 ​```
 !!! note
-    Ed25519 is a recommended crytographic algorithm for SSH keys. 
+    Ed25519 is a recommended cryptographic algorithm for SSH keys. 
 
 Press ``Enter`` through the prompts to accept the defaults. This creates two files: a private key (for your machine) and a public key (for your server).
 
