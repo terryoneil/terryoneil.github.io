@@ -47,13 +47,13 @@ No special hardware is required for this. You can use any old laptop or desktop 
 
 ---
 
-## Installing Ubuntu Server
+## Install Ubuntu Server
 
-### Downloading the Installer
+### Download the Installer
 
 On your main computer, go to [ubuntu.com/download/server](https://ubuntu.com/download/server) and download the Ubuntu Server 24.04 LTS ISO file. It's about 3.2 GB.
 
-### Creating a Bootable USB Drive
+### Create a Bootable USB Drive
 
 To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB drive. You can use [Balena Etcher](https://etcher.balena.io/) for this.
 
@@ -68,7 +68,7 @@ To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB 
 
     **Etcher will erase everything on your USB drive. Make sure you've selected the correct drive.**
 
-### Booting from USB
+### Boot from USB
 
 Plug the USB drive into your server computer and turn it on. You need to make it boot from the USB drive instead of its internal drive.
 
@@ -80,7 +80,7 @@ In the boot menu, select your USB drive. The Ubuntu Server installer will load.
 
     If you're not sure which key to press, try repeatedly pressing ``F12, F2, F10,`` or ``DEL``.
 
-### Running the Installer
+### Run the Installer
 
 The Ubuntu Server installer will take you through a series of steps.
 
@@ -104,7 +104,7 @@ Confirm the installation and wait. When it finishes, remove the USB drive and le
 
 ---
 
-## Interacting with Your Server
+## Interact with Your Server
 
 Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Ubuntu Server doesn't have a real GUI; everything is done through the command line.
 
@@ -112,7 +112,7 @@ You can log in directly by typing your username and pressing Enter, then enterin
 
 Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using SSH, which lets you control your server from a different computer's terminal program. 
 
-### Connecting via SSH
+### Connect via SSH
 
 On **Windows 11**, open PowerShell or Terminal. On **Mac or Linux**, open Terminal. Then type:
 
@@ -134,13 +134,13 @@ Type `yes` if prompted to confirm the connection, then enter your password. Now 
 
 ---
 
-## Giving Your Server a Static IP Address
+## Assign Your Server a Static IP Address
 
 By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a DNS server, this is a clear problem: if its IP address changes, nothing will be able to find it.
 
 Therefore, you need to give your server a *static IP* that does not change; it remains static.
 
-### Finding Your Current Network Info
+### Find Your Current Network Info
 
 In your server's terminal, type:
 
@@ -160,7 +160,7 @@ ip route
 
 The line starting with `default via` shows your *gateway address*. This refers to your router's IP. Write this down as well.
 
-### Editing the Network Config
+### Edit the Network Config
 
 Ubuntu Server uses a tool called *Netplan* to manage network settings. Its configuration lives in a file you'll edit directly.
 
@@ -215,11 +215,11 @@ sudo netplan apply
 
 ---
 
-## Installing Technitium DNS Server
+## Install Technitium DNS Server
 
 Now that your server is stable and accessible, it's time to install Technitium, which will handle your DNS and ad blocking.
 
-### Running the Installer
+### Run the Installer
 
 Technitium provides an install script. Run this command to download and execute it:
 
@@ -236,7 +236,7 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 
 When the script finishes, Technitium DNS Server is up and running. The installer will confirm this with a success message.
 
-### Accessing the Web Interface
+### Access the Web Interface
 
 Technitium has a web-based control panel. On any device on your network, open a browser and navigate to:
 
@@ -254,9 +254,9 @@ You'll be prompted to create an admin username and password. Do that, then log i
 
 ---
 
-## Setting Up Ad Blocking
+## Set Up Ad Blocking
 
-### Adding Blocklists
+### Add Blocklists
 
 Technitium uses community-sourced *blocklists* full of known ad and tracking domains. When Technitium sees a DNS request for a domain on a blocklist, it blocks it.
 
@@ -273,15 +273,15 @@ In the Technitium web interface:
 
 5. Click **Save**.
 
-<img src="../images/technitium_blocklist.png" alt="Technitium dashboard." width="400">
+<img src="../images/technitium_nav.png" alt="Technitium navigation bar." width="400">
 
-<img src="../images/technitium_nav.png" alt="Technitium dashboard." width="400">
+<img src="../images/technitium_blocklist.png" alt="Technitium blocklist." width="400">
 
 !!! note
 
     You can easily add many more blocking domain lists from the Quick Add dropdown. This dropdown contains lists of blockers for things like social media, fake news, pоrnography, and more.
 
-### Applying the Blocklists
+### Apply Blocklists
 
 After saving your list URLs, scroll down and click **Save Settings**, then click **Flush Cache**, and press ``OK``.
 
@@ -289,13 +289,13 @@ Technitium will download and process your blocklists. This may take a minute. Wh
 
 ---
 
-## Pointing Your Network to the New DNS Server
+## Point Your Network to the New DNS Server
 
 Adding blocklists only does anything if your devices are actually sending their DNS requests to Technitium. At this point, they're still using your ISP's DNS server by default.
 
 The easiest way to change this for every device at once is to configure your router.
 
-### Changing Your Router's DNS Settings
+### Change Your Router's DNS Settings
 
 Log into your router's admin panel. This is usually accessible by going to ``192.168.1.1`` or ``192.168.0.1`` in a browser. Your router's default login details are often printed on a sticker placed on the device itself.
 
@@ -313,7 +313,7 @@ Once your devices reconnect, they'll start routing DNS requests through your Tec
 
     If your router is locked down by your ISP and does *not* allow you to change its DNS settings, you'll have to individually change the DNS server on each of your home devices to use your ``192.168.#.#`` server. 
 
-### Verifying Functionality
+### Verify Functionality
 
 In the Technitium web interface, click the **Dashboard** tab. As devices on your network browse the internet, you should start seeing DNS query activity appear here, including a count of blocked requests.
 
@@ -325,13 +325,13 @@ In the Technitium web interface, click the **Dashboard** tab. As devices on your
 
 ---
 
-## Keeping Things Running
+## Keep Things Running
 
 ### Technitium Starts Automatically
 
 Technitium is installed as a *system service*, meaning it starts automatically when your server boots. You don't need to do anything special to keep it running.
 
-### Restarting Technitium
+### Restart Technitium
 
 If you ever need to restart the DNS service manually, run this on your server:
 
@@ -352,11 +352,11 @@ sudo systemctl status dns.service
 
 <a id="ssh"></a>
 
-## Securing SSH (Recommended)
+## Secure SSH (Recommended)
 
 By default, your server accepts SSH logins using a password. Switching to *key-based authentication* is more secure and worth doing before anything else.
 
-### Step 1: Generate a Key Pair
+### Generate a Key Pair
 
 On your **main computer** (not the server), run:
 
@@ -368,7 +368,7 @@ ssh-keygen -t ed25519
 
 Press ``Enter`` through the prompts to accept the defaults. This creates two files: a private key (for your machine) and a public key (for your server).
 
-### Step 2: Copy Your Public Key to the Server
+### Copy Your Public Key to the Server
 
 ​```
 ssh-copy-id your-username@192.168.#.###
@@ -376,7 +376,7 @@ ssh-copy-id your-username@192.168.#.###
 
 Enter your password when prompted.
 
-### Step 3: Disable Password Login
+### Disable Password Login
 
 On the server, open the SSH config:
 
