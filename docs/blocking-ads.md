@@ -152,7 +152,7 @@ Look for a section starting with `eth0` or `enpXsX`. You'll see your current IP 
 
 <img src="../images/ipa.png" alt="ip a command." width="500">
 
-Press ``ctrl + c`` to exit this view. Then type:
+Press ``CTRL + C`` to exit this view. Then type:
 
 ```
 ip route
@@ -390,7 +390,7 @@ Find `#PasswordAuthentication yes` and change it to:
 PasswordAuthentication no
 ​```
 
-Save and exit with ```ctrl + c```, `Enter`, and `ctrl + x`, then restart SSH:
+Save and exit with ```CTRL + C```, `Enter`, and `CTRL + X`, then restart SSH:
 
 !!! warning
 
