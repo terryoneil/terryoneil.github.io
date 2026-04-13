@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../git-guide/">
+      
       
       
         
@@ -19,7 +21,7 @@
     
     
       
-        <title>Blocking Ads on Your Home Wifi with Technitium - Terry O'Neil</title>
+        <title>Network-Level Ad-Blocking - Terry O'Neil</title>
       
     
     
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Blocking Ads on Your Home Wifi with Technitium
+              Network-Level Ad-Blocking
             
           </span>
         </div>
@@ -235,6 +237,436 @@
   
 
       </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network-Level Ad-Blocking
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network-Level Ad-Blocking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-beginners-guide-to-ubuntu-server-and-network-wide-ad-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Beginner's Guide to Ubuntu Server and Network-Wide Ad Blocking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is DNS?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Server?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Need
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-ubuntu-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Ubuntu Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Ubuntu Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-bootable-usb-drive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Bootable USB Drive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booting-from-usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting from USB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-through-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking Through the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Your Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to Your Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting-via-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting via SSH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-your-server-a-static-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving Your Server a Static IP Address
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giving Your Server a Static IP Address">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-your-current-network-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Your Current Network Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-the-network-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing the Network Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-technitium-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Technitium DNS Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Technitium DNS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-ad-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up Ad Blocking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Ad Blocking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-blocklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Blocklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-the-blocklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying the Blocklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointing-your-network-to-the-new-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointing Your Network to the New DNS Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pointing Your Network to the New DNS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-your-routers-dns-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing Your Router's DNS Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-things-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping Things Running
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keeping Things Running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technitium-starts-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technitium Starts Automatically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-technitium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restarting Technitium
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
