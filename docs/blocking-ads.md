@@ -1,6 +1,6 @@
-# Blocking Ads on Your Home Wifi with Technitium
+# Network-Level Ad Blocking
 
-## A Beginner's Guide to Ubuntu Server and Network-Wide Ad Blocking
+## A Beginner's Guide to Ad Blocking on Home Wi-fi 
 
 Most ad blockers only work in a single browser on a single device. By contrast, DNS-level ad-blocking works at the network level. This means that every device on your network gets ad-blocking automatically, no browser extensions required.
 
@@ -14,9 +14,13 @@ By the end, you'll have a self-hosted DNS server that blocks ads and trackers ac
 
 Every time you visit a website, your computer has to look up the address of that site, like a number in a phonebook. This process is handled by a *DNS server*, or *Domain Name System server*. Your ISP assigns you one by default.
 
-Now, underestand that ads and trackers are just websites. When a webpage tries to load an ad, your browser covertly makes a separate DNS request for the ad server's address. If your DNS server knows that address belongs to an advertiser, it can refuse to answer that request; as a result, the ad will never load.
+Ads and trackers are just websites. When a webpage tries to load an ad, your browser makes a covert, separate DNS request for the ad server's address. If your DNS server knows that address belongs to an advertiser, it can refuse to answer that request; as a result, the ad will never load.
 
 Technitium DNS Server lets you do exactly that. It uses community-maintained "blocklists" of known ad and tracking domains to intercept and block ad DNS requests before they can even reach your browser.
+
+!!! note
+
+    See the [Glossary](#glossary) for definitions of technical terms.
 
 ### What Is a Server?
 
@@ -58,7 +62,7 @@ To install Ubuntu Server, you need to transfer the .iso file onto a bootable USB
 3. Click **Select target** and choose your USB drive.
 4. Click **Flash**.
 
-<img src="../images/balena_etcher.png" alt="Balena Etcher." width="350">
+<img src="../images/balena_etcher.png" alt="Balena Etcher." width="400">
 
 !!! warning
 
@@ -100,13 +104,13 @@ Confirm the installation and wait. When it finishes, remove the USB drive and le
 
 ---
 
-## Connecting to Your Server
+## Interacting with Your Server
 
 Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Ubuntu Server doesn't have a real GUI; everything is done through the command line.
 
 You can log in directly by typing your username and pressing Enter, then entering your password.
 
-However, it is much more convenient to connect *remotely* using SSH (*Secure Shell*), which lets you control your server from your main computer's terminal program. 
+Technically, you can type commands directly into your server. However, it is much more convenient to connect *remotely* using SSH (*Secure Shell*), which lets you control your server from a different computer's terminal program. 
 
 ### Connecting via SSH
 
@@ -123,6 +127,10 @@ Replace `your-username` with the username you created during installation, and `
     Your server's current IP address is printed on screen when it boots, next to the words `eth0` or `enp`. It should look something like `192.168.#.###`.
 
 Type `yes` if prompted to confirm the connection, then enter your password. Now you should be connected to your server via SSH.
+
+!!! warning
+
+    By default, your server accepts SSH connections using your username and password. However, if your network is ever exposed to the open internet, this creates a security risk. **Strongly consider disabling password authentication and switching to an SSH key-based login after you're done with this guide.** See the [Securing SSH](#ssh) section.
 
 ---
 
@@ -142,9 +150,9 @@ ip a
 
 Look for a section starting with `eth0` or `enpXsX`. You'll see your current IP address listed next to `inet`. Write it down; you will need to reuse it a lot. 
 
-<img src="../images/ipa-a.png" alt="ip a command." width="350">
+<img src="../images/ipa_a.png" alt="ip a command." width="400">
 
-Press ``ctrl + c`` to back out of this view. Then type:
+Press ``ctrl + c`` to exit this view. Then type:
 
 ```
 ip route
@@ -242,7 +250,7 @@ You'll be prompted to create an admin username and password. Do that, then log i
 
 !!! warning
 
-    For the sake of security, do not use the same password you use for your server login or any other account. Please create a separate credential for the Technitium web interface.
+    For the sake of security, **do not use the same password you use for your server login or any other account.** Please create a separate credential for the Technitium web interface.
 
 ---
 
@@ -265,9 +273,13 @@ In the Technitium web interface:
 
 5. Click **Save**.
 
+<img src="../images/technitium_blocklist.png" alt="Technitium dashboard." width="400">
+
+<img src="../images/technitium_nav.png" alt="Technitium dashboard." width="400">
+
 !!! note
 
-You can easily add many more blocking domain lists from the Quick Add dropdown. This dropdown contains lists of blockers for things like social media, fake news, pоrnography, and more.
+    You can easily add many more blocking domain lists from the Quick Add dropdown. This dropdown contains lists of blockers for things like social media, fake news, pоrnography, and more.
 
 ### Applying the Blocklists
 
@@ -293,18 +305,19 @@ Save the settings and restart your router.
 
 !!! info
 
-    DHCP is Dynamic Host Configuration Protocol: the system your router uses to assign network configuration to devices when they connect. Part of that configuration is which DNS server to use. By changing the router's DHCP settings, you're telling every device on your network to use Technitium automatically.
+    DHCP stands for Dynamic Host Configuration Protocol. It's the system your router uses to assign network configuration to devices when they connect. Part of that configuration is which DNS server to use. By changing the router's DHCP settings, you're telling every device on your network to use Technitium automatically.
 
 Once your devices reconnect, they'll start routing DNS requests through your Technitium server. Ads should begin disappearing network-wide.
 
 !!! warning
-If your router is locked down by your ISP and does *not* allow you to change its DNS settings, you'll have to individually change the DNS server on each of your home devices to use your ``192.168.#.#`` server. 
+
+    If your router is locked down by your ISP and does *not* allow you to change its DNS settings, you'll have to individually change the DNS server on each of your home devices to use your ``192.168.#.#`` server. 
 
 ### Verifying Functionality
 
 In the Technitium web interface, click the **Dashboard** tab. As devices on your network browse the internet, you should start seeing DNS query activity appear here, including a count of blocked requests.
 
-<img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="350">
+<img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="400">
 
 !!! note
 
@@ -336,8 +349,59 @@ sudo systemctl status dns.service
 
     `systemctl` is Ubuntu's service manager. It's how you start, stop, restart, and check the status of background services like Technitium.
 
----
 
+<a id="ssh"></a>
+## Securing SSH
+
+## Securing SSH (Recommended)
+
+By default, your server accepts SSH logins using a password. Switching to *key-based authentication* is more secure and worth doing before anything else.
+
+### Step 1: Generate a Key Pair
+
+On your **main computer** (not the server), run:
+
+​```
+ssh-keygen -t ed25519
+​```
+!!! note
+    Ed25519 is a recommended crytographic algorithm for SSH keys. 
+
+Press Enter through the prompts to accept the defaults. This creates two files: a private key (which stays on your machine) and a public key (which goes on the server).
+
+### Step 2: Copy Your Public Key to the Server
+
+​```
+ssh-copy-id your-username@192.168.#.###
+​```
+
+Enter your password when prompted.
+
+### Step 3: Disable Password Login
+
+On the server, open the SSH config:
+
+​```
+sudo nano /etc/ssh/sshd_config
+​```
+
+Find `#PasswordAuthentication yes` and change it to:
+
+​```
+PasswordAuthentication no
+​```
+
+Save and exit with ```ctrl + c```, `Enter`, and `ctrl + x`, then restart SSH:
+
+!!! warning
+
+    Before disabling password login, open a second SSH session to that confirm key-based login works. If you lock yourself out, you'll need physical access to the server to recover.
+
+​```
+sudo systemctl restart ssh
+​```
+
+<a id="glossary"></a>
 ## Glossary
 
 **Blocklist**

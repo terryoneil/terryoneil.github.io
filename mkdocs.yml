@@ -6,7 +6,7 @@ theme:
 nav:
   - Home: index.md
   - Git for Writers: git-guide.md
-  - Network-Level Ad-Blocking: blocking-ads.md
+  - Network-Level Ad Blocking: blocking-ads.md
 markdown_extensions:
   - admonition
   - abbr

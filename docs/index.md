@@ -5,3 +5,4 @@ You can reach me at [terryoneil39@gmail.com](mailto:terryoneil39@gmail.com) or [
 ## Writing Samples
 
 [Git for Writers: A Beginner's Guide to GitHub Desktop and Markdown](https://terryoneil.github.io/git-guide/)
+[Network-Level Ad Blocking: A Beginner's Guide to Ad Blocking on Home Wi-fi](https://terryoneil.github.io/blocking-ads) 
