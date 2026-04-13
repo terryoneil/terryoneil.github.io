@@ -1,0 +1,970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Blocking Ads on Your Home Wifi with Technitium - Terry O'Neil</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blocking-ads-on-your-home-wifi-with-technitium" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Terry O&#39;Neil" class="md-header__button md-logo" aria-label="Terry O'Neil" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terry O'Neil
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Blocking Ads on Your Home Wifi with Technitium
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Terry O&#39;Neil" class="md-nav__button md-logo" aria-label="Terry O'Neil" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Terry O'Neil
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../git-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Git for Writers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a-beginners-guide-to-ubuntu-server-and-network-wide-ad-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Beginner's Guide to Ubuntu Server and Network-Wide Ad Blocking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How It Works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is DNS?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-a-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Server?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-youll-need" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What You'll Need
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-ubuntu-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Ubuntu Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Ubuntu Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloading-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloading the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-bootable-usb-drive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a Bootable USB Drive
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#booting-from-usb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting from USB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#walking-through-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Walking Through the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-to-your-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Your Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connecting to Your Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connecting-via-ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting via SSH
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#giving-your-server-a-static-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Giving Your Server a Static IP Address
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Giving Your Server a Static IP Address">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finding-your-current-network-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Your Current Network Info
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editing-the-network-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editing the Network Config
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-technitium-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing Technitium DNS Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing Technitium DNS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running the Installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-web-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing the Web Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-ad-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up Ad Blocking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Ad Blocking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-blocklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Blocklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#applying-the-blocklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying the Blocklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pointing-your-network-to-the-new-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pointing Your Network to the New DNS Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pointing Your Network to the New DNS Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-your-routers-dns-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing Your Router's DNS Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying Functionality
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keeping-things-running" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keeping Things Running
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keeping Things Running">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technitium-starts-automatically" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technitium Starts Automatically
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restarting-technitium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restarting Technitium
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Glossary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="blocking-ads-on-your-home-wifi-with-technitium">Blocking Ads on Your Home Wifi with Technitium</h1>
+<h2 id="a-beginners-guide-to-ubuntu-server-and-network-wide-ad-blocking">A Beginner's Guide to Ubuntu Server and Network-Wide Ad Blocking</h2>
+<p>Most ad blockers only work in a single browser on a single device. By contrast, <abbr title="Domain Name System">DNS</abbr>-level ad-blocking works at the network level. This means that every device on your network gets ad-blocking automatically, no browser extensions required.</p>
+<p>This guide is meant to walk you through setting up a home Linux server using Ubuntu Server and using it to run Technitium <abbr title="Domain Name System">DNS</abbr> Server, a free, open-source, and easy-to-use <abbr title="Domain Name System">DNS</abbr> manager with built-in ad blocking.</p>
+<p>By the end, you'll have a self-hosted <abbr title="Domain Name System">DNS</abbr> server that blocks ads and trackers across your entire home network.</p>
+<h2 id="how-it-works">How It Works</h2>
+<h3 id="what-is-dns">What Is <abbr title="Domain Name System">DNS</abbr>?</h3>
+<p>Every time you visit a website, your computer has to look up the address of that site, like a number in a phonebook. This process is handled by a <em><abbr title="Domain Name System">DNS</abbr> server</em>, or <em>Domain Name System server</em>. Your <abbr title="Internet Server Provider">ISP</abbr> assigns you one by default.</p>
+<p>Now, underestand that ads and trackers are just websites. When a webpage tries to load an ad, your browser covertly makes a separate <abbr title="Domain Name System">DNS</abbr> request for the ad server's address. If your <abbr title="Domain Name System">DNS</abbr> server knows that address belongs to an advertiser, it can refuse to answer that request; as a result, the ad will never load.</p>
+<p>Technitium <abbr title="Domain Name System">DNS</abbr> Server lets you do exactly that. It uses community-maintained "blocklists" of known ad and tracking domains to intercept and block ad <abbr title="Domain Name System">DNS</abbr> requests before they can even reach your browser.</p>
+<h3 id="what-is-a-server">What Is a Server?</h3>
+<p>A <em>server</em> is a computer that runs continuously in the background, providing (or <em>serving</em>) some sort of service to other devices. Your server's job will be to answer <abbr title="Domain Name System">DNS</abbr> requests for every device on your network.</p>
+<p>No special hardware is required for this. You can use any old laptop or desktop computer, as long as it allows you to install another operating system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide uses Ubuntu Server 24.04 LTS. <em>LTS</em> stands for Long Term Support, meaning it receives security updates for five years. It's a safe choice for a home server that you plan to leave running 24/7.</p>
+</div>
+<hr />
+<h2 id="what-youll-need">What You'll Need</h2>
+<ul>
+<li>A computer to use as your server</li>
+<li>A USB flash drive of at least 4 GB</li>
+<li>A separate computer to download and prepare the installer</li>
+<li>A router you can log into</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Your server will need a <em>static IP address</em>. If its address changes, your router won't know where to send <abbr title="Domain Name System">DNS</abbr> requests. This guide covers how to set that up.</p>
+</div>
+<hr />
+<h2 id="installing-ubuntu-server">Installing Ubuntu Server</h2>
+<h3 id="downloading-the-installer">Downloading the Installer</h3>
+<p>On your main computer, go to <a href="https://ubuntu.com/download/server">ubuntu.com/download/server</a> and download the Ubuntu Server 24.04 LTS .iso file. It's about 3.2 GB.</p>
+<h3 id="creating-a-bootable-usb-drive">Creating a Bootable USB Drive</h3>
+<p>To install Ubuntu Server, you need to transfer the .iso file onto a bootable USB drive. You can use <a href="https://etcher.balena.io/">Balena Etcher</a> for this.</p>
+<ol>
+<li>Open Balena Etcher.</li>
+<li>Click <strong>Flash from file</strong> and select your downloaded <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr>.</li>
+<li>Click <strong>Select target</strong> and choose your USB drive.</li>
+<li>Click <strong>Flash</strong>.</li>
+</ol>
+<p><img src="../images/balena_etcher.png" alt="Balena Etcher." width="350"></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Etcher will erase everything on your USB drive. Make sure you've selected the correct drive.</strong></p>
+</div>
+<h3 id="booting-from-usb">Booting from USB</h3>
+<p>Plug the USB drive into your server computer and turn it on. You need to make it boot from the USB drive instead of its internal drive.</p>
+<p>To do this, watch for a prompt during startup (usually something like <strong>Press F12 for Boot Menu</strong> or <strong>Press DEL to enter Setup</strong>). Press it repeatedly during the start-up process.</p>
+<p>In the boot menu, select your USB drive. The Ubuntu Server installer will load.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you're not sure which key to press, try repeatedly pressing <code>F12, F2, F10, or DEL</code>.</p>
+</div>
+<h3 id="walking-through-the-installer">Walking Through the Installer</h3>
+<p>The Ubuntu Server installer will take you through a series of steps.</p>
+<p><strong>Language and keyboard:</strong> Select your language and keyboard layout.</p>
+<p><strong>Network:</strong> Ubuntu will attempt to detect your network automatically. Leave this as-is for now.</p>
+<p><strong>Storage:</strong> When the installer asks about storage, choose <strong>Use an entire disk</strong> and confirm. This will erase the drive and install Ubuntu on it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Selecting <strong>Use an entire disk</strong> will permanently delete everything currently on that drive. <strong>Make sure you're installing to the right drive.</strong></p>
+</div>
+<p><strong>Profile setup:</strong> You'll be asked to create a username and password. Choose something secure, yet reasonably typable, as you'll be typing this regularly.</p>
+<p><strong><abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>:</strong> When asked, select <strong>Install OpenSSH server</strong>. This lets you connect to your server remotely from another computer instead of needing a keyboard and monitor plugged directly into the server. It's incredibly useful. </p>
+<p><strong>Snaps:</strong> Skip these optional snap packages. You don't need any of them.</p>
+<p>Confirm the installation and wait. When it finishes, remove the USB drive and let the server reboot.</p>
+<hr />
+<h2 id="connecting-to-your-server">Connecting to Your Server</h2>
+<p>Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Ubuntu Server doesn't have a real <abbr title="Graphical User Interface">GUI</abbr>; everything is done through the command line.</p>
+<p>You can log in directly by typing your username and pressing Enter, then entering your password.</p>
+<p>However, it is much more convenient to connect <em>remotely</em> using <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> (<em>Secure Shell</em>), which lets you control your server from your main computer's terminal program. </p>
+<h3 id="connecting-via-ssh">Connecting via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></h3>
+<p>On <strong>Windows 11</strong>, open PowerShell or Terminal. On <strong>Mac or Linux</strong>, open Terminal. Then type:</p>
+<div class="highlight"><pre><span></span><code>ssh your-username@your-server-ip
+</code></pre></div>
+<p>Replace <code>your-username</code> with the username you created during installation, and <code>your-server-ip</code> with the IP address shown on your server's login screen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your server's current IP address is printed on screen when it boots, next to the words <code>eth0</code> or <code>enp</code>. It should look something like <code>192.168.#.###</code>.</p>
+</div>
+<p>Type <code>yes</code> if prompted to confirm the connection, then enter your password. Now you should be connected to your server via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>.</p>
+<hr />
+<h2 id="giving-your-server-a-static-ip-address">Giving Your Server a Static IP Address</h2>
+<p>By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a <abbr title="Domain Name System">DNS</abbr> server, this is a clear problem: if its IP address changes, nothing will be able to find it.</p>
+<p>Therefore, you need to give your server a <em>static IP</em> that does not change; it remains static.</p>
+<h3 id="finding-your-current-network-info">Finding Your Current Network Info</h3>
+<p>In your server's terminal, type:</p>
+<div class="highlight"><pre><span></span><code>ip a
+</code></pre></div>
+<p>Look for a section starting with <code>eth0</code> or <code>enpXsX</code>. You'll see your current IP address listed next to <code>inet</code>. Write it down; you will need to reuse it a lot. </p>
+<p><img src="../images/ipa-a.png" alt="ip a command." width="350"></p>
+<p>Press <code>ctrl + c</code> to back out of this view. Then type:</p>
+<div class="highlight"><pre><span></span><code>ip route
+</code></pre></div>
+<p>The line starting with <code>default via</code> shows your <em>gateway address</em>. This refers to your router's IP. Write this down as well.</p>
+<h3 id="editing-the-network-config">Editing the Network Config</h3>
+<p>Ubuntu Server uses a tool called <em>Netplan</em> to manage network settings. Its configuration lives in a file you'll edit directly.</p>
+<p>Type:</p>
+<div class="highlight"><pre><span></span><code>ls /etc/netplan/
+</code></pre></div>
+<p>This shows you the filename of the config file. It usually looks like <code>00-installer-config.yaml</code>, though it may vary. Open it with:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/netplan/00-installer-config.yaml
+</code></pre></div>
+<p><code>sudo</code> is short for "superuser do", which effectively means "run as administrator." <code>nano</code> is a simple text editor built into Ubuntu.</p>
+<p>Replace the file's contents with the following, substituting in your own values:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enp4s0</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">no</span>
+<span class="w">      </span><span class="nt">addresses</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.#.###/24</span>
+<span class="w">      </span><span class="nt">routes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">          </span><span class="nt">via</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">192.168.#.#</span>
+<span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">addresses</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8.8.8.8</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Replace <code>enp4s0</code> to match the interface name you found earlier (e.g., <code>enp3s0</code>, <code>eth0</code>). Replace <code>192.168.#.###</code> with the static IP address you want your server to keep permanently, and replace <code>192.168.#.#</code> with your router's gateway address. Keep <code>/24</code> at the end.</p>
+</div>
+<p>To save and exit nano: press <code>Ctrl + C</code>, press <code>Enter</code>, and press <code>Ctrl+ X</code>.</p>
+<p>Apply the changes:</p>
+<div class="highlight"><pre><span></span><code>sudo netplan apply
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you're connected via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> when you apply this, your connection may drop—especially if the IP address changed. Reconnect using the new address. Again, the command to connect via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> is <code>ssh [server name]@192.168.#.##</code>.</p>
+</div>
+<hr />
+<h2 id="installing-technitium-dns-server">Installing Technitium <abbr title="Domain Name System">DNS</abbr> Server</h2>
+<p>Now that your server is stable and accessible, it's time to install Technitium, which will handle your <abbr title="Domain Name System">DNS</abbr> and ad blocking.</p>
+<h3 id="running-the-installer">Running the Installer</h3>
+<p>Technitium provides an install script. Run this command to download and execute it:</p>
+<p><div class="highlight"><pre><span></span><code>curl -sSL https://download.technitium.com/dns/install.sh | sudo bash
+</code></pre></div>
+Alternatively, you can copy and paste the command directly from Technitium's site: https://technitium.com/dns/</p>
+<p><code>curl</code> means Client URL. It downloads a file from the internet. The <code>|</code> symbol (which is called a <em>pipe</em>) passes that file to <code>bash</code>, which then runs it as a script. The install script handles everything automatically.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This step requires your server to have an active internet connection. If anything fails, double-check your Netplan configuration from the previous step.</p>
+</div>
+<p>When the script finishes, Technitium <abbr title="Domain Name System">DNS</abbr> Server is up and running. The installer will confirm this with a success message.</p>
+<h3 id="accessing-the-web-interface">Accessing the Web Interface</h3>
+<p>Technitium has a web-based control panel. On any device on your network, open a browser and navigate to:</p>
+<div class="highlight"><pre><span></span><code>http://192.168.#.###:5380
+</code></pre></div>
+<p>Replace <code>192.168.#.###</code> with your server's static IP address.</p>
+<p>You'll be prompted to create an admin username and password. Do that, then log in.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the sake of security, do not use the same password you use for your server login or any other account. Please create a separate credential for the Technitium web interface.</p>
+</div>
+<hr />
+<h2 id="setting-up-ad-blocking">Setting Up Ad Blocking</h2>
+<h3 id="adding-blocklists">Adding Blocklists</h3>
+<p>Technitium uses community-sourced <em>blocklists</em> full of known ad and tracking domains. When Technitium sees a <abbr title="Domain Name System">DNS</abbr> request for a domain on a <abbr title="A list of known ad, tracking, or malicious domains.">blocklist</abbr>, it blocks it.</p>
+<p>In the Technitium web interface:</p>
+<ol>
+<li>Click <strong>Settings</strong> in the top navigation bar.</li>
+<li>Click the <strong>Blocking</strong> tab.</li>
+<li>Under <strong>Allow/Block List URLs</strong>, click <strong>Add</strong>.</li>
+<li>
+<p>Paste in a <abbr title="A list of known ad, tracking, or malicious domains.">blocklist</abbr> URL. A reliable, well-maintained starting point is:</p>
+<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+</code></pre></div>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>You can easily add many more blocking domain lists from the Quick Add dropdown. This dropdown contains lists of blockers for things like social media, fake news, pоrnography, and more.</p>
+<h3 id="applying-the-blocklists">Applying the Blocklists</h3>
+<p>After saving your list URLs, scroll down and click <strong>Save Settings</strong>, then click <strong>Flush Cache</strong>, and press <code>OK</code>.</p>
+<p>Technitium will download and process your blocklists. This may take a minute. When it's done, the total number of blocked domains will be reflected in the web interface.</p>
+<hr />
+<h2 id="pointing-your-network-to-the-new-dns-server">Pointing Your Network to the New <abbr title="Domain Name System">DNS</abbr> Server</h2>
+<p>Adding blocklists only does anything if your devices are actually sending their <abbr title="Domain Name System">DNS</abbr> requests to Technitium. At this point, they're still using your <abbr title="Internet Server Provider">ISP</abbr>'s <abbr title="Domain Name System">DNS</abbr> server by default.</p>
+<p>The easiest way to change this for every device at once is to configure your router.</p>
+<h3 id="changing-your-routers-dns-settings">Changing Your Router's <abbr title="Domain Name System">DNS</abbr> Settings</h3>
+<p>Log into your router's admin panel. This is usually accessible by going to <code>192.168.1.1</code> or <code>192.168.0.1</code> in a browser. Your router's default login details are often printed on a sticker placed on the device itself.</p>
+<p>In your router's settings, find the field for <strong>Primary <abbr title="Domain Name System">DNS</abbr></strong> and set it to your server's static IP address. You can leave <strong>Secondary <abbr title="Domain Name System">DNS</abbr></strong> blank, or set it to a public <abbr title="Domain Name System">DNS</abbr> like <code>1.1.1.1</code> as a fallback in case your server is ever unavailable.</p>
+<p>Save the settings and restart your router.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> is Dynamic Host Configuration Protocol: the system your router uses to assign network configuration to devices when they connect. Part of that configuration is which <abbr title="Domain Name System">DNS</abbr> server to use. By changing the router's <abbr title="Dynamic Host Configuration Protocol">DHCP</abbr> settings, you're telling every device on your network to use Technitium automatically.</p>
+</div>
+<p>Once your devices reconnect, they'll start routing <abbr title="Domain Name System">DNS</abbr> requests through your Technitium server. Ads should begin disappearing network-wide.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>If your router is locked down by your <abbr title="Internet Server Provider">ISP</abbr> and does <em>not</em> allow you to change its <abbr title="Domain Name System">DNS</abbr> settings, you'll have to individually change the <abbr title="Domain Name System">DNS</abbr> server on each of your home devices to use your <code>192.168.#.#</code> server. </p>
+<h3 id="verifying-functionality">Verifying Functionality</h3>
+<p>In the Technitium web interface, click the <strong>Dashboard</strong> tab. As devices on your network browse the internet, you should start seeing <abbr title="Domain Name System">DNS</abbr> query activity appear here, including a count of blocked requests.</p>
+<p><img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="350"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It may take a few minutes after the router restarts before you see traffic. If nothing appears after ten minutes, double-check that your router's <abbr title="Domain Name System">DNS</abbr> field is set to your server's static IP, and that your server is reachable at that address.</p>
+</div>
+<hr />
+<h2 id="keeping-things-running">Keeping Things Running</h2>
+<h3 id="technitium-starts-automatically">Technitium Starts Automatically</h3>
+<p>Technitium is installed as a <em>system service</em>, meaning it starts automatically when your server boots. You don't need to do anything special to keep it running.</p>
+<h3 id="restarting-technitium">Restarting Technitium</h3>
+<p>If you ever need to restart the <abbr title="Domain Name System">DNS</abbr> service manually, run this on your server:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart dns.service
+</code></pre></div>
+<p>To check whether it's running:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl status dns.service
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>systemctl</code> is Ubuntu's service manager. It's how you start, stop, restart, and check the status of background services like Technitium.</p>
+</div>
+<hr />
+<h2 id="glossary">Glossary</h2>
+<p><strong>Blocklist</strong>
+— A list of known ad, tracking, or malicious domains. Technitium uses blocklists to decide which <abbr title="Domain Name System">DNS</abbr> requests to block.</p>
+<p><strong><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></strong>
+— Dynamic Host Configuration Protocol. The system your router uses to automatically assign IP addresses and other network settings to devices when they connect.</p>
+<p><strong><abbr title="Domain Name System">DNS</abbr></strong>
+— Domain Name System. The internet's address book—translates human-readable website names like <code>google.com</code> into the numerical IP addresses that computers actually use.</p>
+<p><strong><abbr title="Domain Name System">DNS</abbr> Server</strong>
+— A server that answers <abbr title="Domain Name System">DNS</abbr> requests. By default, your <abbr title="Internet Server Provider">ISP</abbr> provides one. This guide replaces that with your own.</p>
+<p><strong>Gateway</strong>
+— Your router's IP address, as seen from inside your network. Traffic that needs to leave your local network is sent to the gateway first.</p>
+<p><strong>IP Address</strong>
+— A numerical label assigned to each device on a network. On most home networks, addresses look like <code>192.168.1.x</code>.</p>
+<p><strong><abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr></strong>
+— A file format for disk images. An <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file contains everything needed to install an operating system.</p>
+<p><strong><abbr title="Internet Server Provider">ISP</abbr></strong>
+— A telecommunications company that provides access to the internet and other similar services. </p>
+<p><strong>Netplan</strong>
+— Ubuntu's network configuration tool. It reads a YAML file and applies network settings, including static IP addresses.</p>
+<p><strong><abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></strong>
+— Secure Shell. A protocol for connecting to and controlling a remote computer securely over a network.</p>
+<p><strong>Static IP</strong>
+— An IP address that doesn't change. Required for a server so that other devices can reliably find it.</p>
+<p><strong>sudo</strong>
+— A command prefix that runs a command with administrator privileges. Short for "superuser do."</p>
+<p><strong>systemctl</strong>
+— Ubuntu's service manager. Used to start, stop, restart, and check the status of background services.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/terry-o-a0634b243/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:terryoneil39@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M61.4 64C27.5 64 0 91.5 0 125.4c0 .9 0 1.7.1 2.6H0v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V128h-.1c0-.9.1-1.7.1-2.6 0-33.9-27.5-61.4-61.4-61.4zM464 192.3V384c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192.3l154.8 117.4c31.4 23.9 74.9 23.9 106.4 0zM48 125.4c0-7.4 6-13.4 13.4-13.4h389.2c7.4 0 13.4 6 13.4 13.4 0 4.2-2 8.2-5.3 10.7L280.2 271.5c-14.3 10.8-34.1 10.8-48.4 0L53.3 136.1c-3.3-2.5-5.3-6.5-5.3-10.7"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
