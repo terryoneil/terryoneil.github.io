@@ -62,7 +62,7 @@ To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB 
 3. Click **Select target** and choose your USB drive.
 4. Click **Flash**.
 
-<img src="../images/balena_etcher.png" alt="Balena Etcher." width="400">
+<img src="../images/balena_etcher.png" alt="Balena Etcher." width="500">
 
 !!! warning
 
@@ -150,7 +150,7 @@ ip a
 
 Look for a section starting with `eth0` or `enpXsX`. You'll see your current IP address listed next to `inet`. Write it down; you will need to reuse it a lot. 
 
-<img src="../images/ipa.png" alt="ip a command." width="400">
+<img src="../images/ipa.png" alt="ip a command." width="500">
 
 Press ``ctrl + c`` to exit this view. Then type:
 
@@ -273,9 +273,9 @@ In the Technitium web interface:
 
 5. Click **Save**.
 
-<img src="../images/technitium_nav.png" alt="Technitium navigation bar." width="400">
+<img src="../images/technitium_nav.png" alt="Technitium navigation bar." width="500">
 
-<img src="../images/technitium_blocklist.png" alt="Technitium blocklist." width="400">
+<img src="../images/technitium_blocklist.png" alt="Technitium blocklist." width="500">
 
 !!! note
 
@@ -317,7 +317,7 @@ Once your devices reconnect, they'll start routing DNS requests through your Tec
 
 In the Technitium web interface, click the **Dashboard** tab. As devices on your network browse the internet, you should start seeing DNS query activity appear here, including a count of blocked requests.
 
-<img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="400">
+<img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="500">
 
 !!! note
 
