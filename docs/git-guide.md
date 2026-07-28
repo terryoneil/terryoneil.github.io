@@ -176,7 +176,7 @@ To merge, go to ``Branch -> Merge into Current Branch``.
 — A markup language for writing, like HTML. Markdown files use the **.md** extension.
 
 **Merge**
-– To combine changes from one branch into another, to eventually be merged into the main version.
+— To combine changes from one branch into another, to eventually be merged into the main version.
 
 **Pull**
 — To download the latest changes from a GitHub repo to a local device. If someone else has pushed changes since your last sync, рulling will bring those changes to your local copy.
@@ -191,4 +191,4 @@ To merge, go to ``Branch -> Merge into Current Branch``.
 — To select a changed file to include in the next cоmmit. Staging allows you select only the files you want to cоmmit, instead of committing everything at once.
 
 **Syntax**
-– The set of formal rules that defines the structure and format of a coding or markup language. Syntax is the "grammar" of coding languages.
+— The set of formal rules that defines the structure and format of a coding or markup language. Syntax is the "grammar" of coding languages.
