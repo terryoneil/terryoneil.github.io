@@ -1172,24 +1172,24 @@
 
 <h1 id="network-level-ad-blocking">Network-Level Ad Blocking</h1>
 <h2 id="a-beginners-guide-to-ad-blocking-on-home-wi-fi">A Beginner's Guide to Ad Blocking on Home Wi-fi</h2>
-<p>Most ad blockers only work in a single browser on a single device. By contrast, <abbr title="Domain Name System">DNS</abbr>-level ad-blocking works at the network level. This means that every device on your network gets ad-blocking automatically, no browser extensions required.</p>
-<p>This guide is meant to walk you through setting up a Ubuntu Linux server and installing Technitium. <a href="https://technitium.com/dns/">Technitium</a> is a free, open-source, and easy-to-use <abbr title="Domain Name System">DNS</abbr> manager with built-in ad blocking functionality.</p>
+<p>Ad blocking browser extensions are great, but they have some issues: sometimes they break certain websites, some websites force viewers to disable them, and sometimes they just fail to block ads altogether.  By contrast, a <abbr title="Domain Name System">DNS</abbr>-level ad-blocker works at the network level. This means that every device on your network will get some ad-blocking capabilities automatically, with no browser extensions required!</p>
+<p>This guide is meant to serve as a walkthrough for setting up a Ubuntu Linux server and installing Technitium. <a href="https://technitium.com/dns/">Technitium</a> is a free, open-source, and easy-to-use <abbr title="Domain Name System">DNS</abbr> manager with built-in ad blocking functionality.</p>
 <p>By the end, you'll have a self-hosted <abbr title="Domain Name System">DNS</abbr> server that blocks ads and trackers across your entire home network.</p>
 <h2 id="how-it-works">How It Works</h2>
 <h3 id="what-is-dns">What Is <abbr title="Domain Name System">DNS</abbr>?</h3>
-<p>Every time you visit a website, your computer has to look up the address of that site, like a number in a phonebook. This process is handled by a <em><abbr title="Domain Name System">DNS</abbr> server</em>, or <em>Domain Name System server</em>. Your <abbr title="Internet Server Provider">ISP</abbr> assigns you one by default.</p>
-<p>Ads and trackers are just websites. When a webpage tries to load an ad, your browser makes a covert, separate <abbr title="Domain Name System">DNS</abbr> request for the ad server's address. If your <abbr title="Domain Name System">DNS</abbr> server knows that address belongs to an advertiser, it can refuse to answer that request; as a result, the ad will never load.</p>
-<p>Technitium <abbr title="Domain Name System">DNS</abbr> Server lets you do exactly that. It uses community-maintained "blocklists" of known ad and tracking domains to intercept and block ad <abbr title="Domain Name System">DNS</abbr> requests before they can even reach your browser.</p>
+<p>Every time you visit a website, your computer has to look up the address of that site. This process is handled by a <em><abbr title="Domain Name System">DNS</abbr> server</em>, or <em>Domain Name System server</em>. ISPs assign users a <abbr title="Domain Name System">DNS</abbr> server by default.</p>
+<p>When it boils down to it, ads and trackers are just websites. When a webpage tries to load an ad, your browser makes a covert, separate <abbr title="Domain Name System">DNS</abbr> request for the ad server's address. If your <abbr title="Domain Name System">DNS</abbr> server knows that address belongs to an advertiser, it can refuse to answer that request. And as a result, the ad will never load. You'll (hopefully) be greeted by a beautiful, buttery-smooth webpage.</p>
+<p>Technitium <abbr title="Domain Name System">DNS</abbr> lets you accomplish this. It uses community-maintained "blocklists" of known ad and tracking domains to intercept and block ad <abbr title="Domain Name System">DNS</abbr> requests before they can reach your browser.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See the <a href="#glossary">Glossary</a> for definitions of technical terms.</p>
 </div>
 <h3 id="what-is-a-server">What Is a Server?</h3>
-<p>A <em>server</em> is a computer that runs continuously in the background, providing (or <em>serving</em>) some sort of service to other devices. Your server's job will be to answer <abbr title="Domain Name System">DNS</abbr> requests for every device on your network.</p>
-<p>No special hardware is required for this. You can use any old laptop or desktop computer, as long as it allows you to install another operating system.</p>
+<p>A <em>server</em> is a computer that runs continuously in the background, providing (or <em>serving</em>) some kind of service to other devices. In this case, your server's job will be to answer <abbr title="Domain Name System">DNS</abbr> requests for all the devices on your network.</p>
+<p>No particular hardware is required for this. You can really use any old laptop or desktop computer, as long as it allows you to install the Linux operating system.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This guide uses Ubuntu Server 24.04 LTS. <em>LTS</em> stands for Long Term Support, meaning it receives security updates for five years. It's a safe choice for a home server that you plan to leave running 24/7.</p>
+<p>This guide uses Ubuntu Server 24.04 LTS. <em>LTS</em> stands for Long Term Support, meaning it receives security updates for five years. It's the ideal choice for a home server that you plan to leave running 24/7.</p>
 </div>
 <hr />
 <h2 id="what-youll-need">What You'll Need</h2>
@@ -1201,14 +1201,14 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Your server will need a <em>static IP address</em>. If its address changes, your router won't know where to send <abbr title="Domain Name System">DNS</abbr> requests. This guide covers how to set that up.</p>
+<p>Your server will need a <em>static IP address</em>, because if its address changes, your router won't have anywhere to send all your <abbr title="Domain Name System">DNS</abbr> requests. This guide also covers how to set that up a static IP address.</p>
 </div>
 <hr />
 <h2 id="install-ubuntu-server">Install Ubuntu Server</h2>
 <h3 id="download-the-installer">Download the Installer</h3>
-<p>On your main computer, go to <a href="https://ubuntu.com/download/server">ubuntu.com/download/server</a> and download the Ubuntu Server 24.04 LTS <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file. It's about 3.2 GB.</p>
+<p>On your main, non-server computer, go to <a href="https://ubuntu.com/download/server">ubuntu.com/download/server</a> and download the Ubuntu Server 24.04 LTS <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file. It's about 3.2 GB.</p>
 <h3 id="create-a-bootable-usb-drive">Create a Bootable USB Drive</h3>
-<p>To install Ubuntu Server, you need to transfer the <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file onto a bootable USB drive. You can use <a href="https://etcher.balena.io/">Balena Etcher</a> for this.</p>
+<p>To install Ubuntu Server, you need to transfer the <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file onto a bootable USB drive. You can use <a href="https://etcher.balena.io/">Balena Etcher</a> for this, or a different program like <a href="https://rufus.ie/en/">Rufus</a>. My screenshots show Balena Etcher.</p>
 <ol>
 <li>Open Balena Etcher.</li>
 <li>Click <strong>Flash from file</strong> and select your downloaded <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr>.</li>
@@ -1218,18 +1218,18 @@
 <p><img src="../images/balena_etcher.png" alt="Balena Etcher." width="500"></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Etcher will erase everything on your USB drive. Make sure you've selected the correct drive.</strong></p>
+<p><strong>Balena Etcher will erase everything on your USB drive! Make absolutely certain that you've selected the correct drive.</strong></p>
 </div>
 <h3 id="boot-from-usb">Boot from USB</h3>
-<p>Plug the USB drive into your server computer and turn it on. You need to make it boot from the USB drive instead of its internal drive.</p>
-<p>To do this, watch for a prompt during startup (usually something like <strong>Press F12 for Boot Menu</strong> or <strong>Press DEL to enter Setup</strong>). Press it repeatedly during the start-up process.</p>
+<p>Plug the USB drive into your server computer and turn it on. You'll need to make it boot from the USB drive instead of its internal drive:</p>
+<p>Watch for a prompt during startup (usually something like <strong>Press F12 for Boot Menu</strong> or <strong>Press DEL to enter Setup</strong>). Press it repeatedly during the startup process.</p>
 <p>In the boot menu, select your USB drive. The Ubuntu Server installer will load.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you're not sure which key to press, try repeatedly pressing <code>F12, F2, F10,</code> or <code>DEL</code>.</p>
+<p>If you're not sure which key to press, try repeatedly pressing <code>F12, F2, F10,</code> or <code>DEL</code>. Most motherboards will react to one of these keys.</p>
 </div>
 <h3 id="run-the-installer">Run the Installer</h3>
-<p>The Ubuntu Server installer will take you through a series of steps.</p>
+<p>The Ubuntu Server installer will run you through a series of steps.</p>
 <ol>
 <li>
 <p><strong>Language and keyboard:</strong> Select your language and keyboard layout.</p>
@@ -1243,7 +1243,7 @@
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Selecting <strong>Use an entire disk</strong> will permanently delete everything currently on that drive. <strong>Make sure you're installing to the right drive.</strong></p>
+<p>Selecting <strong>Use an entire disk</strong> will permanently delete everything currently on that drive. <strong>Make sure you're installing to the correct drive!</strong></p>
 </div>
 <ol>
 <li>
@@ -1253,15 +1253,15 @@
 <p><strong><abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>:</strong> When asked, select <strong>Install OpenSSH server</strong>. This lets you connect to your server remotely from another computer instead of needing a keyboard and monitor plugged directly into the server. It's incredibly useful. </p>
 </li>
 <li>
-<p><strong>Snaps:</strong> Skip these optional snap packages. You don't need any of them.</p>
+<p><strong>Snaps:</strong> Skip these optional snap packages. You don't need any of them for the purposes of this guide.</p>
 </li>
 </ol>
 <p>Confirm the installation and wait. When it finishes, remove the USB drive and let the server reboot.</p>
 <hr />
 <h2 id="interact-with-your-server">Interact with Your Server</h2>
-<p>Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Ubuntu Server doesn't have a real <abbr title="Graphical User Interface">GUI</abbr>; everything is done through the command line.</p>
-<p>You can log in directly by typing your username and pressing Enter, then entering your password.</p>
-<p>Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>, which lets you control your server from a different computer's terminal program. </p>
+<p>Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Unlike Windows or Mac OS, Ubuntu Server doesn't have a real <abbr title="Graphical User Interface">GUI</abbr>. Rather, everything is done through the command line.</p>
+<p>You can log in by typing your username and pressing Enter, then entering your password.</p>
+<p>Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>, which lets you control your server from a different computer's terminal program. As such, it's highly recommended to connect to your server on a different device that's more comfortable to use.</p>
 <h3 id="connect-via-ssh">Connect via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></h3>
 <p>On <strong>Windows 11</strong>, open PowerShell or Terminal. On <strong>Mac or Linux</strong>, open Terminal. Then type:</p>
 <div class="highlight"><pre><span></span><code>ssh your-username@192.168.#.###
@@ -1274,32 +1274,31 @@
 <p>Type <code>yes</code> if prompted to confirm the connection, then enter your password. Now you should be connected to your server via <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>By default, your server accepts <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> connections using your username and password. However, if your network is ever exposed to the open internet, this creates a security risk. <strong>Strongly consider disabling password authentication and switching to an <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> key-based login after you're done with this guide.</strong> See the <a href="#ssh">Securing <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></a> section.</p>
+<p>By default, your server accepts <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> connections using your username and password. But if your network is ever exposed to the open internet, this creates a substantial security risk! <strong>Strongly consider disabling password authentication and switching to an <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> key-based login after you're done with this guide.</strong> See the <a href="#ssh">Securing <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></a> section.</p>
 </div>
 <hr />
 <h2 id="assign-your-server-a-static-ip-address">Assign Your Server a <abbr title="An IP address that doesn't change. Required for a server so that other devices can reliably find it.">Static IP</abbr> Address</h2>
-<p>By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a <abbr title="Domain Name System">DNS</abbr> server, this is a clear problem: if its IP address changes, nothing will be able to find it.</p>
-<p>Therefore, you need to give your server a <em>static IP</em> that does not change; it remains static.</p>
+<p>By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a <abbr title="Domain Name System">DNS</abbr> server, this presents a clear problem: if its IP address changes, nothing will be able to find it.</p>
+<p>For this reason, you'll need to give your server a <em>static IP</em> that won't ever change (unless you want it to).</p>
 <h3 id="find-your-current-network-info">Find Your Current Network Info</h3>
 <p>In your server's terminal, type:</p>
 <div class="highlight"><pre><span></span><code>ip a
 </code></pre></div>
-<p>Look for a section starting with <code>eth0</code> or <code>enpXsX</code>. You'll see your current IP address listed next to <code>inet</code>. Write it down; you will need to reuse it a lot. </p>
+<p>Look for a section starting with <code>eth0</code> or <code>enpXsX</code>. You'll see your current IP address listed next to <code>inet</code>. Copy it down somewhere, because you'll need to reuse it a lot. </p>
 <p><img src="../images/ipa.png" alt="ip a command." width="500"></p>
 <p>Press <code>CTRL + C</code> to exit this view. Then type:</p>
 <div class="highlight"><pre><span></span><code>ip route
 </code></pre></div>
-<p>The line starting with <code>default via</code> shows your <em>gateway address</em>. This refers to your router's IP. Write this down as well.</p>
+<p>The line starting with <code>default via</code> shows your <em>gateway address</em>. This is your router's IP address. Write this down too.</p>
 <h3 id="edit-the-network-config">Edit the Network Config</h3>
-<p>Ubuntu Server uses a tool called <em>Netplan</em> to manage network settings. Its configuration lives in a file you'll edit directly.</p>
-<p>Type:</p>
+<p>Ubuntu Server uses a tool called <em>Netplan</em> to manage network settings. To edit it, type:</p>
 <div class="highlight"><pre><span></span><code>ls /etc/netplan/
 </code></pre></div>
-<p>This shows you the filename of the config file. It usually looks like <code>00-installer-config.yaml</code>, though it may vary. Open it with:</p>
+<p>This shows you the filename of the config file. It usually looks something like <code>00-installer-config.yaml</code>, though it may vary. Open it with:</p>
 <div class="highlight"><pre><span></span><code>sudo nano /etc/netplan/00-installer-config.yaml
 </code></pre></div>
-<p><code>sudo</code> is short for "superuser do", which effectively means "run as administrator." <code>nano</code> is a simple text editor built into Ubuntu.</p>
-<p>Replace the file's contents with the following, substituting in your own values:</p>
+<p><code>sudo</code> is short for "superuser do", which effectively means "run as administrator." <code>nano</code> is Ubuntu's barebones built-in text editor.</p>
+<p>Replace the file's contents with the following values, substituting in your own numbers where you see hash symbols (#):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span>
@@ -1334,19 +1333,19 @@
 <p>Technitium provides an install script. Run this command to download and execute it:</p>
 <p><div class="highlight"><pre><span></span><code>curl -sSL https://download.technitium.com/dns/install.sh | sudo bash
 </code></pre></div>
-Alternatively, you can copy and paste the command directly from Technitium's site: https://technitium.com/dns/</p>
-<p><code>curl</code> means Client URL. It downloads a file from the internet. The <code>|</code> symbol (which is called a <em>pipe</em>) passes that file to <code>bash</code>, which then runs it as a script. The install script handles everything automatically.</p>
+Alternatively, if you'd rather avoid running Terminal commands from the web (which is good practice), you can copy and paste the command directly from Technitium's site: https://technitium.com/dns/</p>
+<p><code>curl</code> means Client URL. It downloads a file from the internet. The <code>|</code> symbol (which is called a <em>pipe</em>) passes that file to <code>bash</code>, which then runs it as a script.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This step requires your server to have an active internet connection. If anything fails, double-check your Netplan configuration from the previous step.</p>
 </div>
-<p>When the script finishes, Technitium <abbr title="Domain Name System">DNS</abbr> Server is up and running. The installer will confirm this with a success message.</p>
+<p>When the script finishes, Technitium <abbr title="Domain Name System">DNS</abbr> Server should be up and running. The installer will confirm this with a success message.</p>
 <h3 id="access-the-web-interface">Access the Web Interface</h3>
 <p>Technitium has a web-based control panel. On any device on your network, open a browser and navigate to:</p>
 <div class="highlight"><pre><span></span><code>http://192.168.#.###:5380
 </code></pre></div>
 <p>Replace <code>192.168.#.###</code> with your server's static IP address.</p>
-<p>You'll be prompted to create an admin username and password. Do that, then log in.</p>
+<p>You'll be prompted to create an admin username and password. Do that and then log in.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>For the sake of security, <strong>do not use the same password you use for your server login or any other account.</strong> Please create a separate credential for the Technitium web interface.</p>
@@ -1377,7 +1376,7 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 </div>
 <h3 id="apply-blocklists">Apply Blocklists</h3>
 <p>After saving your list URLs, scroll down and click <strong>Save Settings</strong>, then click <strong>Flush Cache</strong>, and press <code>OK</code>.</p>
-<p>Technitium will download and process your blocklists. This may take a minute. When it's done, the total number of blocked domains will be reflected in the web interface.</p>
+<p>Technitium will download and process your blocklists, which may take a moment. When it's done, the total number of blocked domains will be reflected in the web interface.</p>
 <hr />
 <h2 id="point-your-network-to-the-new-dns-server">Point Your Network to the New <abbr title="Domain Name System">DNS</abbr> Server</h2>
 <p>Adding blocklists only does anything if your devices are actually sending their <abbr title="Domain Name System">DNS</abbr> requests to Technitium. At this point, they're still using your <abbr title="Internet Server Provider">ISP</abbr>'s <abbr title="Domain Name System">DNS</abbr> server by default.</p>
@@ -1393,10 +1392,10 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 <p>Once your devices reconnect, they'll start routing <abbr title="Domain Name System">DNS</abbr> requests through your Technitium server. Ads should begin disappearing network-wide.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If your router is locked down by your <abbr title="Internet Server Provider">ISP</abbr> and does <em>not</em> allow you to change its <abbr title="Domain Name System">DNS</abbr> settings, you'll have to individually change the <abbr title="Domain Name System">DNS</abbr> server on each of your home devices to use your <code>192.168.#.#</code> server. </p>
+<p>If your router is locked down by your <abbr title="Internet Server Provider">ISP</abbr> and does <em>not</em> allow you to change its <abbr title="Domain Name System">DNS</abbr> settings, then you'll have to individually change the <abbr title="Domain Name System">DNS</abbr> server on each of your home devices to use your <code>192.168.#.#</code> server. </p>
 </div>
 <h3 id="verify-functionality">Verify Functionality</h3>
-<p>In the Technitium web interface, click the <strong>Dashboard</strong> tab. As devices on your network browse the internet, you should start seeing <abbr title="Domain Name System">DNS</abbr> query activity appear here, including a count of blocked requests.</p>
+<p>In the Technitium web interface, click the <strong>Dashboard</strong> tab. As devices on your network browse the internet, you should start seeing <abbr title="Domain Name System">DNS</abbr> queries appear here, including a count of all the blocked requests.</p>
 <p><img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="500"></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1405,7 +1404,7 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 <hr />
 <h2 id="keep-things-running">Keep Things Running</h2>
 <h3 id="technitium-starts-automatically">Technitium Starts Automatically</h3>
-<p>Technitium is installed as a <em>system service</em>, meaning it starts automatically when your server boots. You don't need to do anything special to keep it running.</p>
+<p>Technitium is installed as a <em>system service</em>, meaning it starts automatically when your server boots. You don't need to manually restart it whenever you restart your server.</p>
 <h3 id="restart-technitium">Restart Technitium</h3>
 <p>If you ever need to restart the <abbr title="Domain Name System">DNS</abbr> service manually, run this on your server:</p>
 <div class="highlight"><pre><span></span><code>sudo systemctl restart dns.service
@@ -1419,7 +1418,7 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 </div>
 <p><a id="ssh"></a></p>
 <h2 id="secure-ssh-recommended">Secure <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> (Recommended)</h2>
-<p>By default, your server accepts <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> logins using a password. Switching to <em>key-based authentication</em> is more secure and worth doing before anything else.</p>
+<p>By default, your server accepts <abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr> logins using a password. Switching to <em>key-based authentication</em> is more secure and highly recommended.</p>
 <h3 id="generate-a-key-pair">Generate a Key Pair</h3>
 <p>On your <strong>main computer</strong> (not the server), run:</p>
 <p>​<code>ssh-keygen -t ed25519
@@ -1452,19 +1451,19 @@ Alternatively, you can copy and paste the command directly from Technitium's sit
 <p><strong>Blocklist</strong>
 — A list of known ad, tracking, or malicious domains. Technitium uses blocklists to decide which <abbr title="Domain Name System">DNS</abbr> requests to block.</p>
 <p><strong><abbr title="Dynamic Host Configuration Protocol">DHCP</abbr></strong>
-— Dynamic Host Configuration Protocol. The system your router uses to automatically assign IP addresses and other network settings to devices when they connect.</p>
+— Dynamic Host Configuration Protocol. This is the system a router uses to automatically assign IP addresses and other network settings to devices when they connect.</p>
 <p><strong><abbr title="Domain Name System">DNS</abbr></strong>
-— Domain Name System. The internet's address book—translates human-readable website names like <code>google.com</code> into the numerical IP addresses that computers actually use.</p>
+— Domain Name System. A hierarchical naming system that translates human-readable website names like <code>google.com</code> into the numerical IP addresses readable by a computer.</p>
 <p><strong><abbr title="Domain Name System">DNS</abbr> Server</strong>
 — A server that answers <abbr title="Domain Name System">DNS</abbr> requests. By default, your <abbr title="Internet Server Provider">ISP</abbr> provides one. This guide replaces that with your own.</p>
 <p><strong>Gateway</strong>
-— Your router's IP address, as seen from inside your network. Traffic that needs to leave your local network is sent to the gateway first.</p>
+— Your router's IP address as seen from inside your network. Traffic that needs to leave a local network goes through its gateway first.</p>
 <p><strong>IP Address</strong>
-— A numerical label assigned to each device on a network. On most home networks, addresses look like <code>192.168.1.x</code>.</p>
+— A numerical label assigned to each device on a network. On most home networks, addresses will look like <code>192.168.1.x</code>.</p>
 <p><strong><abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr></strong>
-— A file format for disk images. An <abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr> file contains everything needed to install an operating system.</p>
+— A file format for disk images.</p>
 <p><strong><abbr title="Internet Server Provider">ISP</abbr></strong>
-— A telecommunications company that provides access to the internet and other similar services. </p>
+— A telecommunications company that provides access to the internet and other communication services. </p>
 <p><strong>Netplan</strong>
 — Ubuntu's network configuration tool. It reads a YAML file and applies network settings, including static IP addresses.</p>
 <p><strong><abbr title="Secure Shell. A protocol for securely and remotely controlling a computer.">SSH</abbr></strong>
