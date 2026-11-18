@@ -2,9 +2,9 @@
 
 ## A Beginner's Guide to Ad Blocking on Home Wi-fi 
 
-Most ad blockers only work in a single browser on a single device. By contrast, DNS-level ad-blocking works at the network level. This means that every device on your network gets ad-blocking automatically, no browser extensions required.
+Ad blocking browser extensions are great, but they have some issues: sometimes they break certain websites, some websites force viewers to disable them, and sometimes they just fail to block ads altogether.  By contrast, a DNS-level ad-blocker works at the network level. This means that every device on your network will get some ad-blocking capabilities automatically, with no browser extensions required!
 
-This guide is meant to walk you through setting up a Ubuntu Linux server and installing Technitium. [Technitium](https://technitium.com/dns/) is a free, open-source, and easy-to-use DNS manager with built-in ad blocking functionality.
+This guide is meant to serve as a walkthrough for setting up a Ubuntu Linux server and installing Technitium. [Technitium](https://technitium.com/dns/) is a free, open-source, and easy-to-use DNS manager with built-in ad blocking functionality.
 
 By the end, you'll have a self-hosted DNS server that blocks ads and trackers across your entire home network.
 
@@ -12,11 +12,11 @@ By the end, you'll have a self-hosted DNS server that blocks ads and trackers ac
 
 ### What Is DNS?
 
-Every time you visit a website, your computer has to look up the address of that site, like a number in a phonebook. This process is handled by a *DNS server*, or *Domain Name System server*. Your ISP assigns you one by default.
+Every time you visit a website, your computer has to look up the address of that site. This process is handled by a *DNS server*, or *Domain Name System server*. ISPs assign users a DNS server by default.
 
-Ads and trackers are just websites. When a webpage tries to load an ad, your browser makes a covert, separate DNS request for the ad server's address. If your DNS server knows that address belongs to an advertiser, it can refuse to answer that request; as a result, the ad will never load.
+When it boils down to it, ads and trackers are just websites. When a webpage tries to load an ad, your browser makes a covert, separate DNS request for the ad server's address. If your DNS server knows that address belongs to an advertiser, it can refuse to answer that request. And as a result, the ad will never load. You'll (hopefully) be greeted by a beautiful, buttery-smooth webpage.
 
-Technitium DNS Server lets you do exactly that. It uses community-maintained "blocklists" of known ad and tracking domains to intercept and block ad DNS requests before they can even reach your browser.
+Technitium DNS lets you accomplish this. It uses community-maintained "blocklists" of known ad and tracking domains to intercept and block ad DNS requests before they can reach your browser.
 
 !!! note
 
@@ -24,13 +24,13 @@ Technitium DNS Server lets you do exactly that. It uses community-maintained "bl
 
 ### What Is a Server?
 
-A *server* is a computer that runs continuously in the background, providing (or *serving*) some sort of service to other devices. Your server's job will be to answer DNS requests for every device on your network.
+A *server* is a computer that runs continuously in the background, providing (or *serving*) some kind of service to other devices. In this case, your server's job will be to answer DNS requests for all the devices on your network.
 
-No special hardware is required for this. You can use any old laptop or desktop computer, as long as it allows you to install another operating system.
+No particular hardware is required for this. You can really use any old laptop or desktop computer, as long as it allows you to install the Linux operating system.
 
 !!! note
 
-    This guide uses Ubuntu Server 24.04 LTS. *LTS* stands for Long Term Support, meaning it receives security updates for five years. It's a safe choice for a home server that you plan to leave running 24/7.
+    This guide uses Ubuntu Server 24.04 LTS. *LTS* stands for Long Term Support, meaning it receives security updates for five years. It's the ideal choice for a home server that you plan to leave running 24/7.
 
 ---
 
@@ -43,7 +43,7 @@ No special hardware is required for this. You can use any old laptop or desktop 
 
 !!! warning
 
-    Your server will need a *static IP address*. If its address changes, your router won't know where to send DNS requests. This guide covers how to set that up.
+    Your server will need a *static IP address*, because if its address changes, your router won't have anywhere to send all your DNS requests. This guide also covers how to set that up a static IP address.
 
 ---
 
@@ -51,11 +51,11 @@ No special hardware is required for this. You can use any old laptop or desktop 
 
 ### Download the Installer
 
-On your main computer, go to [ubuntu.com/download/server](https://ubuntu.com/download/server) and download the Ubuntu Server 24.04 LTS ISO file. It's about 3.2 GB.
+On your main, non-server computer, go to [ubuntu.com/download/server](https://ubuntu.com/download/server) and download the Ubuntu Server 24.04 LTS ISO file. It's about 3.2 GB.
 
 ### Create a Bootable USB Drive
 
-To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB drive. You can use [Balena Etcher](https://etcher.balena.io/) for this.
+To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB drive. You can use [Balena Etcher](https://etcher.balena.io/) for this, or a different program like [Rufus](https://rufus.ie/en/). My screenshots show Balena Etcher.
 
 1. Open Balena Etcher.
 2. Click **Flash from file** and select your downloaded ISO.
@@ -66,23 +66,23 @@ To install Ubuntu Server, you need to transfer the ISO file onto a bootable USB 
 
 !!! warning
 
-    **Etcher will erase everything on your USB drive. Make sure you've selected the correct drive.**
+    **Balena Etcher will erase everything on your USB drive! Make absolutely certain that you've selected the correct drive.**
 
 ### Boot from USB
 
-Plug the USB drive into your server computer and turn it on. You need to make it boot from the USB drive instead of its internal drive.
+Plug the USB drive into your server computer and turn it on. You'll need to make it boot from the USB drive instead of its internal drive:
 
-To do this, watch for a prompt during startup (usually something like **Press F12 for Boot Menu** or **Press DEL to enter Setup**). Press it repeatedly during the start-up process.
+Watch for a prompt during startup (usually something like **Press F12 for Boot Menu** or **Press DEL to enter Setup**). Press it repeatedly during the startup process.
 
 In the boot menu, select your USB drive. The Ubuntu Server installer will load.
 
 !!! note
 
-    If you're not sure which key to press, try repeatedly pressing ``F12, F2, F10,`` or ``DEL``.
+    If you're not sure which key to press, try repeatedly pressing ``F12, F2, F10,`` or ``DEL``. Most motherboards will react to one of these keys.
 
 ### Run the Installer
 
-The Ubuntu Server installer will take you through a series of steps.
+The Ubuntu Server installer will run you through a series of steps.
 
 1. **Language and keyboard:** Select your language and keyboard layout.
 
@@ -92,13 +92,13 @@ The Ubuntu Server installer will take you through a series of steps.
 
 !!! warning
 
-    Selecting **Use an entire disk** will permanently delete everything currently on that drive. **Make sure you're installing to the right drive.**
+    Selecting **Use an entire disk** will permanently delete everything currently on that drive. **Make sure you're installing to the correct drive!**
 
 4. **Profile setup:** You'll be asked to create a username and password. Choose something secure, yet reasonably typable, as you'll be typing this regularly.
 
 5. **SSH:** When asked, select **Install OpenSSH server**. This lets you connect to your server remotely from another computer instead of needing a keyboard and monitor plugged directly into the server. It's incredibly useful. 
 
-6. **Snaps:** Skip these optional snap packages. You don't need any of them.
+6. **Snaps:** Skip these optional snap packages. You don't need any of them for the purposes of this guide.
 
 Confirm the installation and wait. When it finishes, remove the USB drive and let the server reboot.
 
@@ -106,11 +106,11 @@ Confirm the installation and wait. When it finishes, remove the USB drive and le
 
 ## Interact with Your Server
 
-Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Ubuntu Server doesn't have a real GUI; everything is done through the command line.
+Once Ubuntu Server boots up, you'll be greeted with a plain text login screen. Unlike Windows or Mac OS, Ubuntu Server doesn't have a real GUI. Rather, everything is done through the command line.
 
-You can log in directly by typing your username and pressing Enter, then entering your password.
+You can log in by typing your username and pressing Enter, then entering your password.
 
-Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using SSH, which lets you control your server from a different computer's terminal program. 
+Technically, you can type commands directly into your server. However, it is much more convenient to connect remotely using SSH, which lets you control your server from a different computer's terminal program. As such, it's highly recommended to connect to your server on a different device that's more comfortable to use.
 
 ### Connect via SSH
 
@@ -130,15 +130,15 @@ Type `yes` if prompted to confirm the connection, then enter your password. Now 
 
 !!! warning
 
-    By default, your server accepts SSH connections using your username and password. However, if your network is ever exposed to the open internet, this creates a security risk. **Strongly consider disabling password authentication and switching to an SSH key-based login after you're done with this guide.** See the [Securing SSH](#ssh) section.
+    By default, your server accepts SSH connections using your username and password. But if your network is ever exposed to the open internet, this creates a substantial security risk! **Strongly consider disabling password authentication and switching to an SSH key-based login after you're done with this guide.** See the [Securing SSH](#ssh) section.
 
 ---
 
 ## Assign Your Server a Static IP Address
 
-By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a DNS server, this is a clear problem: if its IP address changes, nothing will be able to find it.
+By default, most routers assign IP addresses dynamically, meaning that devices get a new one each time they connect. For a DNS server, this presents a clear problem: if its IP address changes, nothing will be able to find it.
 
-Therefore, you need to give your server a *static IP* that does not change; it remains static.
+For this reason, you'll need to give your server a *static IP* that won't ever change (unless you want it to).
 
 ### Find Your Current Network Info
 
@@ -148,7 +148,7 @@ In your server's terminal, type:
 ip a
 ```
 
-Look for a section starting with `eth0` or `enpXsX`. You'll see your current IP address listed next to `inet`. Write it down; you will need to reuse it a lot. 
+Look for a section starting with `eth0` or `enpXsX`. You'll see your current IP address listed next to `inet`. Copy it down somewhere, because you'll need to reuse it a lot. 
 
 <img src="../images/ipa.png" alt="ip a command." width="500">
 
@@ -158,27 +158,26 @@ Press ``CTRL + C`` to exit this view. Then type:
 ip route
 ```
 
-The line starting with `default via` shows your *gateway address*. This refers to your router's IP. Write this down as well.
+The line starting with `default via` shows your *gateway address*. This is your router's IP address. Write this down too.
 
 ### Edit the Network Config
 
-Ubuntu Server uses a tool called *Netplan* to manage network settings. Its configuration lives in a file you'll edit directly.
+Ubuntu Server uses a tool called *Netplan* to manage network settings. To edit it, type:
 
-Type:
 
 ```
 ls /etc/netplan/
 ```
 
-This shows you the filename of the config file. It usually looks like `00-installer-config.yaml`, though it may vary. Open it with:
+This shows you the filename of the config file. It usually looks something like `00-installer-config.yaml`, though it may vary. Open it with:
 
 ```
 sudo nano /etc/netplan/00-installer-config.yaml
 ```
 
-`sudo` is short for "superuser do", which effectively means "run as administrator." `nano` is a simple text editor built into Ubuntu.
+`sudo` is short for "superuser do", which effectively means "run as administrator." `nano` is Ubuntu's barebones built-in text editor.
 
-Replace the file's contents with the following, substituting in your own values:
+Replace the file's contents with the following values, substituting in your own numbers where you see hash symbols (#):
 
 ```yaml
 network:
@@ -226,15 +225,15 @@ Technitium provides an install script. Run this command to download and execute 
 ```
 curl -sSL https://download.technitium.com/dns/install.sh | sudo bash
 ```
-Alternatively, you can copy and paste the command directly from Technitium's site: https://technitium.com/dns/
+Alternatively, if you'd rather avoid running Terminal commands from the web (which is good practice), you can copy and paste the command directly from Technitium's site: https://technitium.com/dns/
 
-`curl` means Client URL. It downloads a file from the internet. The `|` symbol (which is called a *pipe*) passes that file to `bash`, which then runs it as a script. The install script handles everything automatically.
+`curl` means Client URL. It downloads a file from the internet. The `|` symbol (which is called a *pipe*) passes that file to `bash`, which then runs it as a script.
 
 !!! note
 
     This step requires your server to have an active internet connection. If anything fails, double-check your Netplan configuration from the previous step.
 
-When the script finishes, Technitium DNS Server is up and running. The installer will confirm this with a success message.
+When the script finishes, Technitium DNS Server should be up and running. The installer will confirm this with a success message.
 
 ### Access the Web Interface
 
@@ -246,7 +245,7 @@ http://192.168.#.###:5380
 
 Replace `192.168.#.###` with your server's static IP address.
 
-You'll be prompted to create an admin username and password. Do that, then log in.
+You'll be prompted to create an admin username and password. Do that and then log in.
 
 !!! warning
 
@@ -285,7 +284,7 @@ In the Technitium web interface:
 
 After saving your list URLs, scroll down and click **Save Settings**, then click **Flush Cache**, and press ``OK``.
 
-Technitium will download and process your blocklists. This may take a minute. When it's done, the total number of blocked domains will be reflected in the web interface.
+Technitium will download and process your blocklists, which may take a moment. When it's done, the total number of blocked domains will be reflected in the web interface.
 
 ---
 
@@ -311,11 +310,11 @@ Once your devices reconnect, they'll start routing DNS requests through your Tec
 
 !!! warning
 
-    If your router is locked down by your ISP and does *not* allow you to change its DNS settings, you'll have to individually change the DNS server on each of your home devices to use your ``192.168.#.#`` server. 
+    If your router is locked down by your ISP and does *not* allow you to change its DNS settings, then you'll have to individually change the DNS server on each of your home devices to use your ``192.168.#.#`` server. 
 
 ### Verify Functionality
 
-In the Technitium web interface, click the **Dashboard** tab. As devices on your network browse the internet, you should start seeing DNS query activity appear here, including a count of blocked requests.
+In the Technitium web interface, click the **Dashboard** tab. As devices on your network browse the internet, you should start seeing DNS queries appear here, including a count of all the blocked requests.
 
 <img src="../images/technitium_dashboard.png" alt="Technitium dashboard." width="500">
 
@@ -329,7 +328,7 @@ In the Technitium web interface, click the **Dashboard** tab. As devices on your
 
 ### Technitium Starts Automatically
 
-Technitium is installed as a *system service*, meaning it starts automatically when your server boots. You don't need to do anything special to keep it running.
+Technitium is installed as a *system service*, meaning it starts automatically when your server boots. You don't need to manually restart it whenever you restart your server.
 
 ### Restart Technitium
 
@@ -354,7 +353,7 @@ sudo systemctl status dns.service
 
 ## Secure SSH (Recommended)
 
-By default, your server accepts SSH logins using a password. Switching to *key-based authentication* is more secure and worth doing before anything else.
+By default, your server accepts SSH logins using a password. Switching to *key-based authentication* is more secure and highly recommended.
 
 ### Generate a Key Pair
 
@@ -407,25 +406,25 @@ sudo systemctl restart ssh
 — A list of known ad, tracking, or malicious domains. Technitium uses blocklists to decide which DNS requests to block.
 
 **DHCP**
-— Dynamic Host Configuration Protocol. The system your router uses to automatically assign IP addresses and other network settings to devices when they connect.
+— Dynamic Host Configuration Protocol. This is the system a router uses to automatically assign IP addresses and other network settings to devices when they connect.
 
 **DNS**
-— Domain Name System. The internet's address book—translates human-readable website names like `google.com` into the numerical IP addresses that computers actually use.
+— Domain Name System. A hierarchical naming system that translates human-readable website names like `google.com` into the numerical IP addresses readable by a computer.
 
 **DNS Server**
 — A server that answers DNS requests. By default, your ISP provides one. This guide replaces that with your own.
 
 **Gateway**
-— Your router's IP address, as seen from inside your network. Traffic that needs to leave your local network is sent to the gateway first.
+— Your router's IP address as seen from inside your network. Traffic that needs to leave a local network goes through its gateway first.
 
 **IP Address**
-— A numerical label assigned to each device on a network. On most home networks, addresses look like `192.168.1.x`.
+— A numerical label assigned to each device on a network. On most home networks, addresses will look like `192.168.1.x`.
 
 **ISO**
-— A file format for disk images. An ISO file contains everything needed to install an operating system.
+— A file format for disk images.
 
 **ISP**
-— A telecommunications company that provides access to the internet and other similar services. 
+— A telecommunications company that provides access to the internet and other communication services. 
 
 **Netplan**
 — Ubuntu's network configuration tool. It reads a YAML file and applies network settings, including static IP addresses.
