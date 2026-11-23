@@ -1,4 +1,4 @@
-I'm a professional editor with two years of experience working on technical content. This site hosts some of my writing samples and instructional guides.
+I'm a professional editor with nearly three years of experience working on technical content. This site hosts some of my writing samples and instructional guides.
 
 You can reach me at [terryoneil39@gmail.com](mailto:terryoneil39@gmail.com) or [LinkedIn](https://www.linkedin.com/in/terry-o-a0634b243/).
 

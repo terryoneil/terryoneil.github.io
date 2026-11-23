@@ -13,6 +13,6 @@
 *[DHCP]: Dynamic Host Configuration Protocol
 *[DNS]: Domain Name System
 *[ISO]: A file format for disk images, maintained by the International Organization for Standardization.
-*[ISP]: Internet Server Provider
+*[ISP]: Internet Service Provider
 *[SSH]: Secure Shell. A protocol for securely and remotely controlling a computer.
 *[Static IP]: An IP address that doesn't change. Required for a server so that other devices can reliably find it.
