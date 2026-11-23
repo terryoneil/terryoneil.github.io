@@ -1379,7 +1379,7 @@ Alternatively, if you'd rather avoid running Terminal commands from the web (whi
 <p>Technitium will download and process your blocklists, which may take a moment. When it's done, the total number of blocked domains will be reflected in the web interface.</p>
 <hr />
 <h2 id="point-your-network-to-the-new-dns-server">Point Your Network to the New <abbr title="Domain Name System">DNS</abbr> Server</h2>
-<p>Adding blocklists only does anything if your devices are actually sending their <abbr title="Domain Name System">DNS</abbr> requests to Technitium. At this point, they're still using your <abbr title="Internet Server Provider">ISP</abbr>'s <abbr title="Domain Name System">DNS</abbr> server by default.</p>
+<p>Adding blocklists only does anything if your devices are actually sending their <abbr title="Domain Name System">DNS</abbr> requests to Technitium. At this point, they're still using your <abbr title="Internet Service Provider">ISP</abbr>'s <abbr title="Domain Name System">DNS</abbr> server by default.</p>
 <p>The easiest way to change this for every device at once is to configure your router.</p>
 <h3 id="change-your-routers-dns-settings">Change Your Router's <abbr title="Domain Name System">DNS</abbr> Settings</h3>
 <p>Log into your router's admin panel. This is usually accessible by going to <code>192.168.1.1</code> or <code>192.168.0.1</code> in a browser. Your router's default login details are often printed on a sticker placed on the device itself.</p>
@@ -1392,7 +1392,7 @@ Alternatively, if you'd rather avoid running Terminal commands from the web (whi
 <p>Once your devices reconnect, they'll start routing <abbr title="Domain Name System">DNS</abbr> requests through your Technitium server. Ads should begin disappearing network-wide.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>If your router is locked down by your <abbr title="Internet Server Provider">ISP</abbr> and does <em>not</em> allow you to change its <abbr title="Domain Name System">DNS</abbr> settings, then you'll have to individually change the <abbr title="Domain Name System">DNS</abbr> server on each of your home devices to use your <code>192.168.#.#</code> server. </p>
+<p>If your router is locked down by your <abbr title="Internet Service Provider">ISP</abbr> and does <em>not</em> allow you to change its <abbr title="Domain Name System">DNS</abbr> settings, then you'll have to individually change the <abbr title="Domain Name System">DNS</abbr> server on each of your home devices to use your <code>192.168.#.#</code> server. </p>
 </div>
 <h3 id="verify-functionality">Verify Functionality</h3>
 <p>In the Technitium web interface, click the <strong>Dashboard</strong> tab. As devices on your network browse the internet, you should start seeing <abbr title="Domain Name System">DNS</abbr> queries appear here, including a count of all the blocked requests.</p>
@@ -1455,14 +1455,14 @@ Alternatively, if you'd rather avoid running Terminal commands from the web (whi
 <p><strong><abbr title="Domain Name System">DNS</abbr></strong>
 — Domain Name System. A hierarchical naming system that translates human-readable website names like <code>google.com</code> into the numerical IP addresses readable by a computer.</p>
 <p><strong><abbr title="Domain Name System">DNS</abbr> Server</strong>
-— A server that answers <abbr title="Domain Name System">DNS</abbr> requests. By default, your <abbr title="Internet Server Provider">ISP</abbr> provides one. This guide replaces that with your own.</p>
+— A server that answers <abbr title="Domain Name System">DNS</abbr> requests. By default, your <abbr title="Internet Service Provider">ISP</abbr> provides one. This guide replaces that with your own.</p>
 <p><strong>Gateway</strong>
 — Your router's IP address as seen from inside your network. Traffic that needs to leave a local network goes through its gateway first.</p>
 <p><strong>IP Address</strong>
 — A numerical label assigned to each device on a network. On most home networks, addresses will look like <code>192.168.1.x</code>.</p>
 <p><strong><abbr title="A file format for disk images, maintained by the International Organization for Standardization.">ISO</abbr></strong>
 — A file format for disk images.</p>
-<p><strong><abbr title="Internet Server Provider">ISP</abbr></strong>
+<p><strong><abbr title="Internet Service Provider">ISP</abbr></strong>
 — A telecommunications company that provides access to the internet and other communication services. </p>
 <p><strong>Netplan</strong>
 — Ubuntu's network configuration tool. It reads a YAML file and applies network settings, including static IP addresses.</p>
